@@ -253,7 +253,7 @@ Certo:
 </head>
 ```
 
-**DEVE-SE** omitir links que apontam para o arquivo *favicon.ico*. Todos os navegadores atuais encontram o favicon.icon automaticamente e assincronicamente. Basta colocar este arquivo no diretório raiz do site.
+**DEVE-SE** omitir links que apontam para o arquivo *favicon.ico*. Todos os navegadores atuais encontram o *favicon.ico* automaticamente e assincronicamente. Basta colocar este arquivo no diretório raiz do site.
 
 Errado:
 
