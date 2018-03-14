@@ -3,11 +3,9 @@
 * [Principal](readme.md)
 * [Índice HTML](html.md)
 
-# 1. Scripts
-
 Scripts sempre foram uma área onde muito cuidado é necessário, pois um erro pode travar todos os próximos scripts da página HTML. Para que isso não aconteça, segue-se algumas práticas que podem reduzir ou extinguir esses problemas no desenvolvimento.
 
-## 1.1. Separação de contextos
+# 1. Separação de contextos
 
 Um prática importantíssima é separar os scripts em dois tipos de conteúdo: arquivos de declaração e arquivos de lógica.
 
@@ -52,7 +50,7 @@ alert(one + ' ' + two + yellow() );
 console.log(singing_js);
 ```
 
-## 1.2. Incluindo arquivos de scripts
+# 2. Incluindo arquivos de scripts
 
 **DEVE-SE** adicionar scripts com declarações na tag *head*. Bibliotecas, como *jquery*, *datepicker* e *cia*, geralmente são arquivos de declarações.
 
@@ -98,7 +96,7 @@ Certo:
 </head>
 ```
 
-## 1.3. Blocos de Scripts
+# 3. Blocos de Scripts
 
 **NÃO DEVE-SE** usar o atributo *type* para blocos de scripts. No HTML5, o valor padrão para o elemento script já é *text/javascript*. 
 
