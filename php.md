@@ -13,19 +13,19 @@ Baseado nos padrões PSR-1, PSR-2 com pequenos acréscimos usados para o desenvo
 * [PHP do Jeito Certo](http://br.phptherightway.com/)
 * [Padrões PEAR](http://pear.php.net/manual/en/rfc.cs-enhancements.php)
 
-# 1. Arquivos PHP
+# 1. Regras Gerais
 
-## 1.1. Regras gerais
+* **DEVE-SE** criar arquivos PHP sempre em UTF-8;
+* **DEVE-SE** utilizar o padrão Unix LF (linefeed) de terminação de linhas em todos os arquivos PHP;
+* **DEVE-SE** usar apenas as tags padrões longas **<?php ?>** ou curtas **<?= ?>** para envolver código PHP. Outras variações como `<% %>` ou `<script language="php">` **NÃO DEVEM** ser usadas;
 
-* Códigos PHP DEVEM ser criados sempre em UTF-8;
-* Todos os arquivos PHP DEVEM utilizar o padrão Unix LF (linefeed) de terminação de linhas;
-* DEVEM-se usar apenas as tags padrões longas **<?php ?>** ou curtas **<?= ?>** para envolver código PHP;
+## 1.1. Arquivos com código somente em PHP
 
-## 1.2. Codificação somente em PHP
-
-Além de respeitar as regras gerais, arquivos com código somente em PHP DEVE começar com **<?php** seguida de uma linha em branco ou o namespace da classe.
-
-Devem terminar com uma única linha em branco e a tag de fechamento **?>** deve ser omitida:
+* **DEVE-SE** sempre começar um arquivo com a tag **<?php**;
+* **DEVE-SE** adicionar uma linha em branco após a tag **<?php**, quando não houver namespace;
+* **DEVE-SE** adicionar o namespace após a tag **<?php** e uma linha em branco após o namespace, quando ele existir;
+* **NÃO DEVE-SE** utilizar a tag de o fechamento **?>** em arquivos com código somente em PHP;
+* **DEVE-SE** adicionar uma única linha em branco após o término do código PHP;
 
 ```php
 <?php
@@ -48,27 +48,115 @@ class IronMan
 
 ```
 
-## 1.3. Codificação mista (html | javascript | css + PHP)
+## 1.2. Arquivos com código misto (html | javascript | css + PHP)
 
-Arquivos com codificação mista DEVE seguir as regras gerais:
+* **DEVE-SE** separar o máximo possível o código de servidor (PHP) do código do cliente (html, css ou javascript);
+* **DEVE-SE** criar dois blocos, onde o primeiro predomine o PHP e o outro, as outras linguagens.
+* **DEVE-SE** usar a notação de templates do PHP (`<?= $variavel; ?>`, `<?php if(true): ?>`, `<?php endif; ?>`, etc) ao misturar com HTML.
+
+Errado:
 
 ```php
 
-<?php
-    $arch_reactor = new IronMan;
-?>
-
-<div>
-    <?= $arch_reactor->mark ?>
-</div>
+<script>
+    alert('Bem vindo à página HTML');
+</script>
 
 <?php
-    var_dump($arch_reactor);
+    $title = 'Título da Página';
 ?>
+
+<h1>
+    <?php 
+        echo $title; 
+    ?>
+</h1>
+
+<?php
+    $arch_reactor = [
+        'one',
+        'two',
+        'three',
+    ];
+?>
+
+<p>
+    Texto de párágrafo
+</p>
+
+<h2>Subtítulo</h2>
+
+<ul>
+<?php
+    foreach($arch_reactor as $name) {
+        echo "<li>";
+        echo $name;
+        echo "</li>";
+    }
+?>
+</ul>
+
+<p>
+    Texto de párágrafo
+</p>
 
 ```
 
-## 1.4. Declarações de Símbolos x Implementação de Lógica
+Certo:
+
+```php
+<?php
+
+    // Bloco 1:
+    // Predomina o código PHP
+
+    $title = 'Título da Página';
+    
+    $arch_reactor = [
+        'one',
+        'two',
+        'three',
+    ];
+    
+?>
+
+<!-- 
+    Bloco 2
+    Predomina o código HTML
+-->
+
+<h1>
+    <?= $title; ?> <!-- notação de template -->
+</h1>
+
+<p>
+    Texto de párágrafo
+</p>
+
+<h2>Subtítulo</h2>
+
+<ul>
+    <?php foreach($arch_reactor as $name): ?> <!-- notação de template -->
+    
+        <li>
+            <?= $name ?> <!-- notação de template -->
+        </li>
+        
+    <?php endforeach; ?> <!-- notação de template -->
+
+</ul>
+
+<p>
+    Texto de párágrafo
+</p>
+
+<script>
+    alert('Bem vindo à página HTML');
+</script>
+
+```
+
+## 1.3. Declarações de Símbolos x Implementação de Lógica
 
 Em arquivos PHP pode-se declarar simbolos (classes, funções, constantes, etc.) ou implementar lógica. Mas JAMAIS os dois contextos ao mesmo tempo.
 
