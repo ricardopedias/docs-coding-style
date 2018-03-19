@@ -7,18 +7,20 @@
 
 As regras gerais de estilo para estruturas de controle são as seguintes:
 
-* DEVE haver um espaço após a palavra-chave da estrutura de controle;
-* NÃO DEVE haver um espaço depois do parenteses de abertura;
-* NÃO DEVE haver um espaço antes do parenteses de fechamento;
-* DEVE haver um espaço entre o parenteses de fechamento e a chave de abertura;
-* O corpo da estrutura DEVE ser indentada uma vez;
-* A chave de fechamento DEVE ser colocada na linha após o corpo da estrutura;
-* O corpo de cada estrutura DEVE ser envolta por chaves. Isso padroniza como as estruturas se parecem e reduz a possibilidade de introduzir erros à medida que novas linhas são adicionadas ao corpo da estrutura.
+* **DEVE-SE** adicionar um espaço após a palavra-chave da estrutura de controle;
+* **NÃO DEVE-SE** adicionar um espaço depois do parenteses de abertura;
+* **NÃO DEVE-SE** adicionar um espaço antes do parenteses de fechamento;
+* **DEVE-SE** adicionar um espaço entre o parenteses de fechamento e a chave de abertura;
+* **DEVE-SE** indentar uma vez o corpo da estrutura;
+* **DEVE-SE** colocar a chave de fechamento na linha após o corpo da estrutura;
+* **DEVE-SE** envolver entre chaves o corpo de cada estrutura. 
+
+> Isso padroniza como as estruturas se parecem e reduz a possibilidade de introduzir erros à medida que novas linhas são adicionadas ao corpo da estrutura.
 
 # 2. if, elseif, else
 
-* O **else** e o **elseif** DEVEM estar na mesma linha que a chave de fechamento do corpo da estrutura anterior;
-* A palavra-chave **elseif** DEVE ser utilizada ao invés de **else if** para que todas as palavras-chave de controle se pareçam com uma só palavra.
+* **DEVE-SE** colocar o **else** e o **elseif** na mesma linha que a chave de fechamento do corpo da estrutura anterior;
+* **DEVE-SE** utilizar a palavra-chave **elseif** ao invés de **else if** para que todas as palavras-chave de controle se pareçam com uma só palavra.
 
 Note o posicionamento dos parenteses, espaços e chaves, por exemplo:
 
@@ -37,9 +39,9 @@ if ($expr1) {
 
 # 3. switch, case
 
-* A declaração **case** DEVE ser identada uma vez do switch;
-* A palavra-chave case (ou qualquer outra palavra-chave de terminação) DEVE ser indentada no mesmo nível que o corpo do case;
-* DEVE haver um comentário como **//sem break** quando a passagem ao próximo case é intencional em um corpo de case que não está vazio.
+* **DEVE-SE** indentar uma vez a declaração **case** em relação ao **switch**;
+* **DEVE-SE** indentar a palavra-chave de terminação **break** (ou qualquer outra palavra-chave de terminação) no mesmo nível que o corpo do **case**;
+* **DEVE-SE** adicionar o comentário '`//sem break`' quando a passagem ao próximo case é intencional em um corpo de case que não está vazio.
 
 Note o posicionamento dos parenteses, espaços e chaves, por exemplo: 
 
