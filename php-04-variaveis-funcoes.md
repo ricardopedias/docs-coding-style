@@ -1,7 +1,7 @@
 # PHP - Variáveis e Funções
 
 * [Principal](readme.md)
-* [Íncide PHP](php.md)
+* [Índice PHP](php.md)
 
 # 1. Funções anônimas
 

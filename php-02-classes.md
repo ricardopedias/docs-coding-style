@@ -1,7 +1,7 @@
 # PHP - Classes e Namespaces
 
 * [Principal](readme.md)
-* [Íncide PHP](php.md)
+* [Índice PHP](php.md)
 
 Quando é dito "classes", refere-se a toda a estrutura que compoem a arquitetura do PHP, ou seja, classes, interfaces, traits, etc.
 

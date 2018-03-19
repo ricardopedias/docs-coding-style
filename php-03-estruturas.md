@@ -1,7 +1,7 @@
 # PHP - Estruturas de Controle
 
 * [Principal](readme.md)
-* [Íncide PHP](php.md)
+* [Índice PHP](php.md)
 
 # 1. Regras Gerais
 
