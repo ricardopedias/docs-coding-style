@@ -264,3 +264,5 @@ $foo->bar(
 );
 
 ```
+
+[Anterior](php-01-documento.md) ... [Próxima](php-03-estruturas.md)
