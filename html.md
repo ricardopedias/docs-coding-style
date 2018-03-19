@@ -7,8 +7,8 @@
 
 ## Referências externas
 
-* [HTML5 W3C Recommendation](https://www.w3.org/TR/html52/){:target="_blank"}
-* [WHATWG HTML Living Standard](https://html.spec.whatwg.org/){:target="_blank"}
+* [HTML5 W3C Recommendation](https://www.w3.org/TR/html52/)
+* [WHATWG HTML Living Standard](https://html.spec.whatwg.org/)
 
 ## Índice
 
