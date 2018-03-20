@@ -61,8 +61,6 @@
 ```
 
 
-```html
-
 # 2. Postagens relacionadas
 
 * **DEVE-SE** adicionar as postagens relacionados, ou qualquer lista de postagens dentro do bloco `<section>`;
