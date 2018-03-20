@@ -25,4 +25,4 @@ Certo:
 </section>
 ```
 
-[Anterior](html-04-corpo.md) ... [Próxima](html-06-tipografia.md)
+[Anterior](html-04-corpo.md) ... [Próxima](html-06-text-content.md)
