@@ -303,6 +303,10 @@ As tags semânticas dão poder ao HTML e são adoradas pelos mecanismos de busca
         <header>
             <!-- cabeçalho -->
         </header>
+        
+        <nav>
+            <!-- menu principal -->
+        </nav>
 
         <main>
 
@@ -346,7 +350,7 @@ As tags semânticas dão poder ao HTML e são adoradas pelos mecanismos de busca
 ```
 
 * **DEVE-SE** envolver o título principal e seus parágrafos com a tag `<header>`;
-* **DEVE-SE** envolver os subtítulos em cascata incluindo os parágrafos com a tag `<section>`;
+* **DEVE-SE** envolver os subtítulos em cascata (h2, h3, etc) incluindo seus respectivos parágrafos com a tag `<section>`;
 * **DEVE-SE** envolver as imagens com a tag `<figure>` e as legendas com a tag `<figcaption>`;
 * **DEVE-SE** envolver as informações adicionais do artigo (autor, referências, etc) com a tag `<footer>`;
 
@@ -357,13 +361,13 @@ Errado:
 
     <h1>Descobrindo o HTML5</h1>
 
-    <p> <!-- texto  --> </p>
+    <p> ... </p>
 
-    <p> <!-- texto  --> </p>
+    <p> ... </p>
     
     <h2>Aprendendo Semântica</h2>
     
-    <p> <!-- texto  --> </p>
+    <p> ... </p>
 
     <p>
         <img src='avengers.png' alt='Infinity War'>
@@ -372,7 +376,7 @@ Errado:
 
     <h3>Conhecendo Acessibilidade</h3>
     
-    <p> <!-- texto  --> </p>
+    <p> ... </p>
 
     <h2>Referências</h2>
     
@@ -399,21 +403,25 @@ Correto:
 
     <article>
 
+        <!-- título principal e seus parágrafos -->
+        
         <header>
         
             <h1>Descobrindo o HTML5</h1>
 
-            <p> <!-- texto  --> </p>
+            <p> ... </p>
 
-            <p> <!-- texto  --> </p>
+            <p> ... </p>
 
         </header>
 
+        <!-- subtítulos em cascata -->
+        
         <section>
     
             <h2>Aprendendo Semântica</h2>
     
-            <p> <!-- texto  --> </p>
+            <p> ... </p>
 
             <figure>
             
@@ -424,10 +432,12 @@ Correto:
 
             <h3>Conhecendo Acessibilidade</h3>
 
-            <p> <!-- texto  --> </p>
+            <p> ... </p>
             
         </section>
 
+        <!-- informações adicionais do artigo -->
+        
         <footer>
 
             <h2>Referências</h2>
@@ -464,7 +474,11 @@ Correto:
 
         <article>
         
-            <img src='avengers.png' alt='Infinity War'>
+            <figure>
+            
+                <img src='avengers.png' alt='Infinity War'>
+                
+            </figure>
 
             <h2>Título do Primeiro Artigo</h2>
             
@@ -476,7 +490,11 @@ Correto:
         
         <article>
         
-            <img src='justice-league.png' alt='Justice League'>
+            <figure>
+            
+                <img src='justice-league.png' alt='Justice League'> 
+            
+            </figure>
 
             <h2>Título do Segundo Artigo</h2>
             
