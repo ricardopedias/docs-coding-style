@@ -28,7 +28,7 @@ Considerando a implementação de um Blog, ou site de notícias, vamos definir a
 ```
 
 * **DEVE-SE** envolver o título principal e seus parágrafos com a tag `<header>`;
-* * **DEVE-SE** envolver as informações adicionais da postagem (autor, referências, etc) com a tag `<footer>`;
+* **DEVE-SE** envolver as informações adicionais da postagem (autor, referências, etc) com a tag `<footer>`;
 * **DEVE-SE** envolver os subtítulos em cascata (h2, h3, etc) incluindo seus respectivos parágrafos com a tag `<section>`;
 
 Errado:
@@ -355,68 +355,6 @@ Correto:
     </section>
 
 </article>
-```
-
-
-
-
-
-
-## 4.3. Estrutura de uma lista de Artigos
-
-* **DEVE-SE** envolver uma lista de artigos usando a tag `<section>`;
-* **DEVE-SE** usar a tag `<h2>` nos títulos dos artigos da lista;
-
-```html
-<main>
-
-    <section>
-
-        <h1>Artigos Relacionados</h1>
-
-        <p>Os artigos mais lidos do planeta Krypton</p>
-
-        <article>
-        
-            <figure>
-            
-                <img src='avengers.png' alt='Infinity War'>
-                
-            </figure>
-
-            <h2>Título do Primeiro Artigo</h2>
-            
-            <p>
-                <!-- resumo do artigo -->
-            </p>
-            
-        </article>
-        
-        <article>
-        
-            <figure>
-            
-                <img src='justice-league.png' alt='Justice League'> 
-            
-            </figure>
-
-            <h2>Título do Segundo Artigo</h2>
-            
-            <p>
-                <!-- resumo do artigo -->
-            </p>
-            
-        </article>
-        
-    <section>
-
-    <aside>
-    
-        <!-- barra lateral -->
-        
-    </aside>
-
-</main>
 ```
 
 [Anterior](html-04-corpo.md) ... [Próxima](html-06-lista-de-postagens.md)
