@@ -10,6 +10,7 @@
 Errado:
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <body>
@@ -21,6 +22,7 @@ Errado:
 
 Correto
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
@@ -162,6 +164,7 @@ Certo:
 Errado:
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
@@ -178,6 +181,7 @@ Errado:
 Certo:
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>

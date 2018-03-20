@@ -3,11 +3,14 @@
 * [Principal](readme.md)
 * [Índice HTML](html.md)
 
+# 1. Regras Gerais
+
 **DEVE-SE** sempre adicionar a *body* no container *html*.
 
 Errado:
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
@@ -19,6 +22,7 @@ Errado:
 
 Correto
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
@@ -37,18 +41,34 @@ Correto
 Errado:
 
 ```html
-<div class="chapter">
-    <!-- mais código html -->
+
+<div id="content">
+
+    <div id="post">
+    
+        <!-- mais código html -->
+        
+    </div>        
+
 </div>
+
 ```
 
 Certo:
 
 ```html
-<section>
-    <!-- mais código html -->
-</section>
+<main>
+
+    <article>
+    
+        <!-- mais código html -->
+        
+    </article>
+    
+</main>
 ```
+
+# 2. Tags Semânticas
 
 As tags semanticas são: 
 
@@ -96,17 +116,18 @@ Referência: [caniuse.com](https://caniuse.com/#feat=html5semantic).
 
 Suporte para versões anteriores do Internet Explorer pode ser adicionado com [html5shiv](https://github.com/aFarkas/html5shiv).
 
-# 1. O Elemento main
+# 3. O Elemento main
 
-A tag *main* não é um elemento de seção de conteúdo e não afeta o fluxo do documento. Ou seja, ela não tem *margin*, *padding*, *borda* ou qualquer outro valor padrão.
+A tag `<main>` de um documento inclui conteúdo exclusivo desse documento e exclui o conteúdo que é repetido em um conjunto de documentos, como links de navegação do site, informações de direitos autorais, logotipos do site, banners e formulários de pesquisa (a menos que o documento ou a função principal do aplicativo é o de um formulário de pesquisa).
+
+A tag `<main>` não é um elemento de seção e conteúdo e não afeta o fluxo do documento. Ou seja, ela não tem *margin*, *padding*, *borda* ou qualquer outro valor padrão.
 
 * **DEVE-SE** usar o elemento main para envolver o conteúdo principal do documento HTML.
-* **NÃO DEVE-SE** adicionar a tag main como filha de elementos como aside, article, footer, header ou nav.
-* **NÃO DEVE-SE** colocar mais do que **UMA** tag main no seu documento.
 
 Errado:
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
@@ -135,6 +156,7 @@ Errado:
 Certo:
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
@@ -160,14 +182,206 @@ Certo:
 </html>
 ```
 
-# 2. Semântica
+* **Não DEVE-SE** adicionar mais de uma tag `<main>` visível em um documento. 
+
+> Se mais de uma tag `<main>` estiver presente em um documento, todas as outras instâncias devem ser declaradas como ocultas usando o atributo hidden.
+
+Errado:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <!-- tags de metadados -->
+    </head>
+    
+    <body>
+
+        <main>...</main>
+        <main>...</main>
+        <main>...</main>
+        
+    </body>
+    
+</html>
+```    
+
+Correto
+
+```html
+<html lang="pt-BR">
+
+    <head>
+        <!-- tags de metadados -->
+    </head>
+    
+    <body>
+
+        <main>...</main>
+        <main hidden>...</main>
+        <main hidden>...</main>
+        
+    </body>
+    
+</html>
+``` 
+
+* **NÃO DEVE-SE** adicionar a tag main como filha de elementos como aside, article, footer, header ou nav.
+
+Errado:
+
+```html
+<article>
+
+    <main>        
+        <!-- código html conteudo -->
+    </main>
+
+</article>
+```
+
+Aceitável:
+
+```html
+
+<div>
+    <main>
+
+        <article>        
+            <!-- código html conteudo -->
+        </article>
+
+    </main>
+</div>
+```
+
+Certo:
+
+```html
+<main>
+
+    <article>        
+        <!-- código html conteudo -->
+    </article>
+
+</main>
+```
+
+# 4. O Layout
 
 As tags semânticas existem para facilitar que os leitores de páginas html (navegadores de internet, por ex.) identifiquem o que significa cada conteúdo e possam utilizar esta informação para diversos fins, inclusive para ajudar usuários com alguma deficiência física.
 
 As tags semânticas dão poder ao HTML e são adoradas pelos mecanismos de busca como o Google, por exemplo.
 
+## 4.1. Estrutura básica
 
-## 2.1. Estrutura básica
+* **DEVE-SE** implementar o layout semântico segundo o esquema do HTML5;
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <!-- metadados -->
+    </head>
+    
+    <body>
+
+        <header>
+            <!-- cabeçalho -->
+        </header>
+
+        <main>
+
+             <!-- conteudo -->
+
+            <aside>
+                <!-- barra lateral -->
+            </aside>
+
+        </main>
+
+        <footer>
+            <!-- rodapé -->
+        </footer>
+
+    </body>
+    
+</html>
+```
+
+## 4.2. Estrutura de um Artigo
+
+* **DEVE-SE** implementar o conteúdo textual (artigo, postagem, matéria, notícia, etc) usando a tag article;
+* **DEVE-SE** envolver o título principal e seus parágrafos com a tag `<header>`;
+* **DEVE-SE** envolver os subtítulos em cascata com seus parágrafos com a tag `<section>`;
+
+Errado:
+
+```html
+<main>
+
+    <h1>Descobrindo o HTML5</h1>
+
+    <p> <!-- texto  --> </p>
+
+    <p> <!-- texto  --> </p>
+    
+    <h2>Aprendendo Semântica</h2>
+    
+    <p> <!-- texto  --> </p>
+
+    <h3>Conhecendo Acessibilidade</h3>
+    
+    <p> <!-- texto  --> </p>
+
+    <aside>
+        <!-- barra lateral -->
+    </aside>
+
+</main>
+```
+
+Correto:
+
+```html
+<main>
+
+    <article>
+
+        <header>
+        
+            <h1>Descobrindo o HTML5</h1>
+
+            <p> <!-- texto  --> </p>
+
+            <p> <!-- texto  --> </p>
+
+        </header>
+
+        <section>
+    
+            <h2>Aprendendo Semântica</h2>
+    
+            <p> <!-- texto  --> </p>
+
+            <h3>Conhecendo Acessibilidade</h3>
+
+            <p> <!-- texto  --> </p>
+            
+        </section>
+        
+    <article>
+
+    <aside>
+        <!-- barra lateral -->
+    </aside>
+
+</main>
+```
+
+...
 
 
 ```html

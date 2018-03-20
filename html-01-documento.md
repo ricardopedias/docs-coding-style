@@ -118,6 +118,7 @@ Certo:
 **NÃO DEVE-SE** alterar a estrutura padrão do HTML em nenhuma hipótese. A estrutura padrão é composta por dois containers (*head* e *body*) e novas tags devem ser acomodadas dentro do container correto.
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
@@ -134,6 +135,7 @@ Certo:
 Errado:
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
@@ -156,6 +158,7 @@ Errado:
 Certo:
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
@@ -177,6 +180,7 @@ Certo:
 Errado:
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
@@ -188,6 +192,7 @@ Errado:
 
 Correto
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>

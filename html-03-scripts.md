@@ -58,6 +58,7 @@ console.log(singing_js);
 
 
 ```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 
     <head>
