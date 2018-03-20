@@ -9,6 +9,7 @@
 
 * [HTML5 W3C Recommendation](https://www.w3.org/TR/html52/)
 * [WHATWG HTML Living Standard](https://html.spec.whatwg.org/)
+* [HTML5 Doctor](http://html5doctor.com/the-article-element/)
 
 ## Índice
 

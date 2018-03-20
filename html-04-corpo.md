@@ -194,7 +194,7 @@ Certo:
 </html>
 ```
 
-* **Não DEVE-SE** adicionar mais de uma tag `<main>` visível em um documento. 
+* **NÃO DEVE-SE** adicionar mais de uma tag `<main>` visível em um documento. 
 
 > Se mais de uma tag `<main>` estiver presente em um documento, todas as outras instâncias devem ser declaradas como ocultas usando o atributo hidden.
 
@@ -301,11 +301,11 @@ As tags semânticas dão poder ao HTML e são adoradas pelos mecanismos de busca
     <body>
 
         <header>
-            <!-- cabeçalho -->
+            <!-- cabeçalho do documento -->
         </header>
         
         <nav>
-            <!-- menu principal -->
+            <!-- menu principal do documento -->
         </nav>
 
         <main>
@@ -319,7 +319,7 @@ As tags semânticas dão poder ao HTML e são adoradas pelos mecanismos de busca
         </main>
 
         <footer>
-            <!-- rodapé -->
+            <!-- rodapé do documento -->
         </footer>
 
     </body>
@@ -350,9 +350,8 @@ As tags semânticas dão poder ao HTML e são adoradas pelos mecanismos de busca
 ```
 
 * **DEVE-SE** envolver o título principal e seus parágrafos com a tag `<header>`;
+* * **DEVE-SE** envolver as informações adicionais do artigo (autor, referências, etc) com a tag `<footer>`;
 * **DEVE-SE** envolver os subtítulos em cascata (h2, h3, etc) incluindo seus respectivos parágrafos com a tag `<section>`;
-* **DEVE-SE** envolver as imagens com a tag `<figure>` e as legendas com a tag `<figcaption>`;
-* **DEVE-SE** envolver as informações adicionais do artigo (autor, referências, etc) com a tag `<footer>`;
 
 Errado:
 
@@ -361,18 +360,13 @@ Errado:
 
     <h1>Descobrindo o HTML5</h1>
 
-    <p> ... </p>
+    <p>Publicado em: 10/01/2018</p>
 
     <p> ... </p>
     
     <h2>Aprendendo Semântica</h2>
     
     <p> ... </p>
-
-    <p>
-        <img src='avengers.png' alt='Infinity War'>
-        <small>Poster Infinity War</small>
-    </p>
 
     <h3>Conhecendo Acessibilidade</h3>
     
@@ -409,7 +403,10 @@ Correto:
         
             <h1>Descobrindo o HTML5</h1>
 
-            <p> ... </p>
+            <p>
+                Publicado em: 
+                <time pubdate datetime="2018-10-01">10/01/2018</time>
+            </p>
 
             <p> ... </p>
 
@@ -422,13 +419,6 @@ Correto:
             <h2>Aprendendo Semântica</h2>
     
             <p> ... </p>
-
-            <figure>
-            
-                <img src='avengers.png' alt='Infinity War'>
-                <figcaption>Poster Infinity War</figcaption>
-                
-            </figure>
 
             <h3>Conhecendo Acessibilidade</h3>
 
@@ -462,6 +452,173 @@ Correto:
 </main>
 ```
 
+* **DEVE-SE** envolver as imagens com a tag `<figure>` e as legendas com a tag `<figcaption>`;
+
+Errado:
+
+```html
+<article>
+
+    <!-- mais conteudo -->
+
+    <section>
+    
+        <h2>Aprendendo Semântica</h2>
+    
+        <p> ... </p>
+
+        <p>
+            <img src='avengers.png' alt='Infinity War'>
+            <small>Poster Infinity War</small>
+        </p>
+
+        <h3>Conhecendo Acessibilidade</h3>
+
+        <p> ... </p>
+
+    </section>
+
+    <!-- mais conteudo -->
+    
+</article>
+```
+
+Correto:
+
+```html
+<article>
+
+    <!-- mais conteudo -->
+
+    <section>
+    
+        <h2>Aprendendo Semântica</h2>
+    
+        <p> ... </p>
+
+        <figure>
+            <img src='avengers.png' alt='Infinity War'>
+            <figcaption>Poster Infinity War</figcaption>
+        </figure>
+
+        <h3>Conhecendo Acessibilidade</h3>
+
+        <p> ... </p>
+
+    </section>
+
+    <!-- mais conteudo -->
+    
+</article>
+```
+
+* **DEVE-SE** envolver com a tag `<aside>` conteúdos que estejam diretamente ligados ao conteúdo do artigo, como frases, trechos em destaque, listas de definições, etc;
+* **NÃO DEVE-SE** envolver com a tag `<aside>` conteúdos como banners de anúncios, caixas de busca, artigos relacionados, pois nenhum destes está diretamente relacionado com o conteúdo do artigo;
+
+Errado:
+
+```html
+    <article>
+
+        <header>
+        
+            <!-- cabeçalho no artigo -->
+
+        </header>
+
+        <!-- propaganda do artigo -->
+         
+        <aside class='advert'>
+        
+            <img src='banner-propaganda.png'>
+            
+        </aside>
+
+        <div class="quotes">
+        
+            <q>
+                Trecho do artigo em destaque.
+            </q>
+            
+        </div>
+
+        <section>
+    
+            <h2>Aprendendo Semântica</h2>
+    
+            <p> ... </p>
+
+            <h3>Conhecendo Acessibilidade</h3>
+
+            <p> ... </p>
+            
+        </section>
+
+        <footer>
+
+            <!-- rodapé do artigo -->
+            
+        </footer>
+        
+    </article>
+```
+
+Correto:
+
+```html
+<main>
+
+    <article>
+
+        <header>
+        
+            <!-- cabeçalho no artigo -->
+
+        </header>
+
+        <!-- propaganda do artigo -->
+         
+        <div class='advert'>
+        
+            <img src='banner-propaganda.png'>
+            
+        </div>
+
+        <aside class="quotes">
+        
+            <q>
+                Trecho do artigo em destaque.
+            </q>
+            
+        </aside>
+
+        <section>
+    
+            <h2>Aprendendo Semântica</h2>
+    
+            <p> ... </p>
+
+            <h3>Conhecendo Acessibilidade</h3>
+
+            <p> ... </p>
+            
+        </section>
+
+        <footer>
+
+            <!-- rodapé do artigo -->
+            
+        </footer>
+        
+    </article>
+
+    <aside>
+        <!-- barra lateral -->
+    </aside>
+
+</main>
+```
+
 ## 4.3. Estrutura de uma lista de Artigos
 
 * **DEVE-SE** envolver uma lista de artigos usando a tag `<section>`;
@@ -471,6 +628,10 @@ Correto:
 <main>
 
     <section>
+
+        <h1>Artigos Relacionados</h1>
+
+        <p>Os artigos mais lidos do planeta Krypton</p>
 
         <article>
         
@@ -515,9 +676,129 @@ Correto:
 </main>
 ```
 
-...
-...
-...
+## 4.4. Artigo com comentários
+
+* **DEVE-SE** adicionar os comentários do artigo dentro do bloco `<section>`;
+* **DEVE-SE** adicionar o bloco `<section>` junto com o conteúdo do artigo, na tag `<article>`;
+* **DEVE-SE** envolver cada comentário também com a tag `<article>`;
+* **DEVE-SE** usar `<h2>` para o titulo do bloco de comentários;
+* **DEVE-SE** usar `<h3>` para o título de cada comentário;
+* **DEVE-SE** envolver o titulo e as informações do comentário com `<header>`;
+* **DEVE-SE** envolver o texto do comentário com a tag `<p>`.
+
+```html
+<article>
+
+    <!-- conteudo do artigo -->
+    
+    <section>
+    
+        <h2>Commentários</h2>
+        
+        <article>
+        
+            <header>
+            
+                <h3>Posted by: Apple Lover</h3>
+                
+                <p>
+                    <time pubdate datetime="2009-10-10T19:10-08:00">
+                    ~1 hour ago
+                    </time>
+                </p>
+                
+            </header>
+            
+            <p>I love apples, my favourite kind are Granny Smiths</p>
+            
+        </article>
+    
+        <article>
+        
+            <header>
+            
+                <h3>Posted by: Oranges are king</h3>
+                
+                <p>
+                    <time pubdate datetime="2009-10-10T19:15-08:00">
+                    ~1 hour ago
+                    </time>
+                </p>
+                
+            </header>
+            
+            <p>Urgh, apples!? you should write about ORANGES instead!!1!</p>
+            
+        </article>
+        
+    </section>
+
+</article>
+
+```html
+
+## 4.5. Artigo com elementos relacionados
+
+* **DEVE-SE** adicionar os artigos relacionados, ou qualquer lista de artigos adicionais dentro do bloco `<section>`;
+* **NÃO DEVE-SE** adicionar o bloco `<section>` junto com o conteúdo do artigo, na tag `<article>`, mas fora dele;
+* **DEVE-SE** usar a tag `<h2>` nos títulos dos artigos da lista;
+
+```html
+<main>
+
+    <article>
+
+        <!-- conteúdo do artigo -->
+        
+    </article>
+
+    <!-- bloco de relacionados fora do conteúdo do artigo -->
+    
+    <section>
+
+        <h1>Artigos Relacionados</h1>
+
+        <article>
+        
+            <figure>
+            
+                <img src='avengers.png' alt='Infinity War'>
+                
+            </figure>
+
+            <h2>Título do Primeiro Artigo</h2>
+            
+            <p>
+                <!-- resumo do artigo relacionado -->
+            </p>
+            
+                 
+        </article>
+        
+        <article>
+       
+            <!-- imagem, titulo e resumo do artigo relacionado -->
+            
+        </article>
+
+        <article>
+       
+            <!-- imagem, titulo e resumo do artigo relacionado -->
+            
+        </article>
+        
+    <section>
+
+    <aside>
+    
+        <!-- barra lateral -->
+        
+    </aside>
+
+</main>
+```
+
+
 
 
 
