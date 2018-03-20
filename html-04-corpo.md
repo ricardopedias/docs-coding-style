@@ -114,7 +114,19 @@ As outras tags são suportadas pelos navegadores:
 
 Referência: [caniuse.com](https://caniuse.com/#feat=html5semantic).
 
-Suporte para versões anteriores do Internet Explorer pode ser adicionado com [html5shiv](https://github.com/aFarkas/html5shiv).
+Para corrigir o suporte a todas as tags semânticas para os Internet Explorer's menores que a versão 9, é preciso adicionar o script [html5shiv](https://github.com/aFarkas/html5shiv).
+
+```html
+<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+<![endif]-->
+```
+
+Para corrigir o suporte à tag `<main>` para os Internet Explorer's superiores a versão 9, é preciso aplicar o estilo `display:block` através do CSS: 
+
+```css
+main { display: block; }
+```
 
 # 3. O Elemento main
 
