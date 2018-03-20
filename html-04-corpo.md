@@ -325,9 +325,30 @@ As tags semânticas dão poder ao HTML e são adoradas pelos mecanismos de busca
 
 ## 4.2. Estrutura de um Artigo
 
-* **DEVE-SE** implementar o conteúdo textual (artigo, postagem, matéria, notícia, etc) usando a tag article;
+* **DEVE-SE** implementar o conteúdo do artigo (postagem, matéria, notícia, etc) usando a tag article;
+
+```html
+<main>
+
+    <article>
+
+        <!-- conteúdo do artigo -->
+        
+    </article>
+
+    <aside>
+    
+        <!-- barra lateral -->
+        
+    </aside>
+
+</main>
+```
+
 * **DEVE-SE** envolver o título principal e seus parágrafos com a tag `<header>`;
-* **DEVE-SE** envolver os subtítulos em cascata com seus parágrafos com a tag `<section>`;
+* **DEVE-SE** envolver os subtítulos em cascata incluindo os parágrafos com a tag `<section>`;
+* **DEVE-SE** envolver as imagens com a tag `<figure>` e as legendas com a tag `<figcaption>`;
+* **DEVE-SE** envolver as informações adicionais do artigo (autor, referências, etc) com a tag `<footer>`;
 
 Errado:
 
@@ -344,9 +365,25 @@ Errado:
     
     <p> <!-- texto  --> </p>
 
+    <p>
+        <img src='avengers.png' alt='Infinity War'>
+        <small>Poster Infinity War</small>
+    </p>
+
     <h3>Conhecendo Acessibilidade</h3>
     
     <p> <!-- texto  --> </p>
+
+    <h2>Referências</h2>
+    
+    <ul>
+        <li>HTML5 W3C Recommendation</li>
+        <li>WHATWG HTML Living Standard</li>
+    </ul>
+
+    <p>
+        Este artigo foi escrito por Ricardo Pereira Dias
+    </p>
 
     <aside>
         <!-- barra lateral -->
@@ -378,13 +415,35 @@ Correto:
     
             <p> <!-- texto  --> </p>
 
+            <figure>
+            
+                <img src='avengers.png' alt='Infinity War'>
+                <figcaption>Poster Infinity War</figcaption>
+                
+            </figure>
+
             <h3>Conhecendo Acessibilidade</h3>
 
             <p> <!-- texto  --> </p>
             
         </section>
+
+        <footer>
+
+            <h2>Referências</h2>
+    
+            <ul>
+                <li>HTML5 W3C Recommendation</li>
+                <li>WHATWG HTML Living Standard</li>
+            </ul>
+
+            <p>
+                Este artigo foi escrito por Ricardo Pereira Dias
+            </p>
+            
+        </footer>
         
-    <article>
+    </article>
 
     <aside>
         <!-- barra lateral -->
@@ -393,7 +452,55 @@ Correto:
 </main>
 ```
 
+## 4.3. Estrutura de uma lista de Artigos
+
+* **DEVE-SE** envolver uma lista de artigos usando a tag `<section>`;
+* **DEVE-SE** usar a tag `<h2>` nos títulos dos artigos da lista;
+
+```html
+<main>
+
+    <section>
+
+        <article>
+        
+            <img src='avengers.png' alt='Infinity War'>
+
+            <h2>Título do Primeiro Artigo</h2>
+            
+            <p>
+                <!-- resumo do artigo -->
+            </p>
+            
+        </article>
+        
+        <article>
+        
+            <img src='justice-league.png' alt='Justice League'>
+
+            <h2>Título do Segundo Artigo</h2>
+            
+            <p>
+                <!-- resumo do artigo -->
+            </p>
+            
+        </article>
+        
+    <section>
+
+    <aside>
+    
+        <!-- barra lateral -->
+        
+    </aside>
+
+</main>
+```
+
 ...
+...
+...
+
 
 
 ```html
