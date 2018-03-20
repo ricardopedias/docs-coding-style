@@ -25,4 +25,4 @@ Certo:
 </section>
 ```
 
-[Anterior](html-04-corpo.md) ... [Próxima](html-06-text-content.md)
+[Anterior](html-06-lista-de-postagens.md) ... [Próxima](html-08-text-content.md)
