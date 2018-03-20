@@ -16,6 +16,10 @@
 * [Documento HTML](html-01-documento.md)
 * [Metadados](html-02-metadados.md)
 * [Scripts](html-03-scripts.md)
-* [Corpo e Layout](html-04-corpo.md)
-* [Microdata](html-05-microdata.md)
+* [Corpo do Documento](html-04-corpo.md)
+* [Implementando uma Postagem](html-05-postagem.md)
+* [Implementando Listas de Postagens](html-06-listas-de-postagens.md)
+* [Microdata](html-07-microdata.md)
+* [Conteúdo Textual](html-08-conteudo-textual.md)
+
 
