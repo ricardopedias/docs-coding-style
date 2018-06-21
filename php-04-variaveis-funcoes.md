@@ -31,11 +31,13 @@ Lista de argumentos **PODEM** ser divididas entre múltiplas linhas, onde cada l
 <?php
 
 public function super_mega_blaster_arch_reactor(
-        ClassTypeHint $arg1,
-        &$arg2,
-        array $arg3 = []
+    ClassTypeHint $arg1,
+    &$arg2,
+    array $arg3 = []
 ) {
+
     // corpo da função
+    
 }
 ```
 
@@ -74,11 +76,15 @@ Na declaração de **closure**, note o posicionamento dos parenteses, vírgulas,
 <?php
 
 $closure_with_args = function ($arg1, $arg2) {
+
     // corpo da closure
+    
 };
 
 $closure_with_args_and_vars = function ($arg1, $arg2) use ($var1, $var2) {
+
     // corpo da closure
+    
 };
 
 ```
@@ -89,7 +95,7 @@ Listas de argumentos e variáveis **PODEM** ser dividas em múltiplas linhas, on
 * **DEVE-SE** colocar somente um argumento ou variável por linha;
 * **DEVE-SE** colocar o parentese de fechamento e a chave de abertura juntas em sua própria linha com um espaço entre elas.
 
-A seguir estão exemplos de closures com e sem listas de argumentos e variáveis que se dividem por múltiplas linhas:
+Exemplos de argumentos sem a palavra-chave *"use"*:
 
 ```php
 <?php
@@ -99,16 +105,32 @@ $long_args_no_vars = function (
     $longer_argument,
     $much_longer_argument
 ) {
-   // corpo
+
+   // corpo da closure
+   
 };
+```
+
+Exemplos de variáveis na palavra-chave *"use"* sem argumentos na função:
+
+```php
+<?php
 
 $no_args_long_vars = function () use (
     $long_var1,
     $longer_var2,
     $much_longer_var3
 ) {
-   // corpo
+
+   // corpo da closure
+   
 };
+```
+
+Exemplos de argumentos na função e variáveis na palavra-chave *"use"*:
+
+```php
+<?php
 
 $long_args_long_vars = function (
     $long_argument,
@@ -119,7 +141,9 @@ $long_args_long_vars = function (
     $longer_var2,
     $much_longer_var3
 ) {
-   // corpo
+
+   // corpo da closure
+   
 };
 
 $long_args_short_vars = function (
@@ -127,7 +151,9 @@ $long_args_short_vars = function (
     $longer_argument,
     $much_longer_argument
 ) use ($var1) {
-   // corpo
+
+   // corpo da closure
+   
 };
 
 $short_args_lon_vars = function ($arg) use (
@@ -135,12 +161,15 @@ $short_args_lon_vars = function ($arg) use (
     $longer_var2,
     $much_longer_var3
 ) {
-   // corpo
+
+   // corpo da closure
+   
 };
 
 ```
 
-Note que as regras de formatação também se aplicam em closures que são utilizadas diretamente numa chamada de função ou método como um argumento:
+
+As regras de formatação também se aplicam em closures que são utilizadas diretamente numa chamada de função ou método como um argumento:
 
 ```php
 <?php
@@ -148,7 +177,9 @@ Note que as regras de formatação também se aplicam em closures que são utili
 $foo->bar(
     $arg1,
     function ($arg2) use ($var1) {
-        // corpo
+    
+        // corpo da closure
+        
     },
     $arg3
 );
