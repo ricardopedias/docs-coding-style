@@ -5,9 +5,31 @@
 
 # 1. Regras Gerais
 
+## 1.1. Abertura do documento
+
 * **DEVE-SE** criar arquivos PHP sempre em UTF-8;
 * **DEVE-SE** utilizar o padrão Unix LF (linefeed) de terminação de linhas em todos os arquivos PHP;
 * **DEVE-SE** usar apenas as tags padrões longas **<?php ?>** ou curtas **<?= ?>** para envolver código PHP. Outras variações como `<% %>` ou `<script language="php">` **NÃO DEVEM** ser usadas;
+
+## 1.2. Linhas
+
+* **NÃO DEVE** haver um limite rígido no comprimento da linha;
+* **DEVE-SE** determinar o limite suave (barra vertical delimitadoa em IDEs) de 120 caracteres; O ideal é que as linhas possuam sempre que possível, o máximo de 80 caracteres; linhas mais longas do que isso deveriam
+ser divididas em várias linhas subseqüentes de no máximo 80 caracteres cada.
+
+* **NÃO DEVE** haver espaços em branco no final de linhas não em branco;
+* **PODE-SE** adicionar linhas em branco para melhorar a legibilidade e para separar blocos de código.
+
+## 1.3. Indentação
+
+* **NÃO DEVE-SE** usar tabulações para indentar o código;
+* **DEVE-SE** indentar o código com 4 espaços;
+
+> **Nota:** A maioria dos editores de código e IDEs permitem a configuração das tabulações. Procure, sempre configurar para que as tabulações sejam substituídas por 4 espaços. Isso impede que sejam misturados espaços e tabulações, evitando problemas com diffs, patches, histórico e anotações. 
+
+## 1.4. Palavras Chave
+
+* **DEVE-SE** escrever as palavras chave do PHP sempre em lower case. Palavras reservadas como ***true***, ***false*** e ***null*** **DEVEM SEMPRE** ser escritas em lower case.
 
 # 2. Arquivos com código somente em PHP
 
