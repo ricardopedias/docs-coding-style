@@ -18,8 +18,9 @@
 * [Scripts](html-03-scripts.md)
 * [Corpo do Documento](html-04-corpo.md)
 * [Implementando uma Postagem](html-05-postagem.md)
-* [Implementando Listas de Postagens](html-06-listas-de-postagens.md)
-* [Microdata](html-07-microdata.md)
-* [Conteúdo Textual](html-08-conteudo-textual.md)
+* [Implementando Listas de Postagens](html-06-lista-de-postagens.md)
+* [Conteúdo Textual](html-07-conteudo-textual.md)
+* [Microdata](html-08-microdata.md)
+
 
 

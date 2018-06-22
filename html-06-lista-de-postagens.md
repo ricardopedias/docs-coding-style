@@ -274,5 +274,5 @@
 
 
 
-[Anterior](html-05-postagem.md) ... [Próxima](html-07-microdata.md)
+[Anterior](html-05-postagem.md) ... [Próxima](html-07-conteudo-textual.md)
 
