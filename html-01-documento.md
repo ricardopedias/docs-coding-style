@@ -190,7 +190,8 @@ Errado:
 </html>
 ```
 
-Correto
+Correto:
+
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -205,6 +206,120 @@ Correto
     
 </html>
 ```
+
+# 4. Regras gerais
+
+* **DEVE-SE** fechar todos os elementos que permitam conteúdo (por exemplo, a tag `<p>`). O HTML5 permite tags abertas, mas isso não é recomendado.
+* **DEVE-SE** omitir o sinal de fechamento que não permitam conteúdo, (por exemplo, nas tags img, br e link);
+
+Errado:
+
+```html
+<img src="html5.gif" />
+
+<section>
+  <p>This is a paragraph.
+  <p>This is a paragraph.
+</section>
+```
+
+Correto:
+
+```html
+<img src="html5.gif">
+
+<section>
+  <p>This is a paragraph.</p>
+  <p>This is a paragraph.</p>
+</section>
+```
+
+* **NÃO DEVE-SE** misturam letras maiúsculas e minúsculas para nomear os atributos de tags;
+* **DEVE-SE** nomear os atributos sempre em minúsculas (lower case), para tornar o código limpo e fácil de entender.
+
+Errado:
+
+```html
+<div CLASS="menu">
+```
+
+Correto:
+
+```html
+<div class="menu">
+```
+
+* **NÃO DEVE-SE** omitir as aspas em valores de atributos que contenham espaços (duas palavras ou mais);
+* **DEVE-SE** adicionar aspas em todos os valores dos atributos, mesmo que seja uma só palavra.
+
+Erradíssimo:
+
+```html
+<div class=table striped></div>
+```
+
+Errado:
+
+```html
+<div class=striped></div>
+```
+
+Correto:
+
+```html
+<div class="table striped"></div>
+<div class="striped"></div>
+```
+
+* **DEVE-SE** sempre adicionar o atributo ***alt*** na tag `<img>`. Este atributo é importante para ser exibido quando a imagem não puder ser exibida por algum motivo;
+
+Errado:
+
+```html
+<img src="html5.gif">
+```
+
+Correto:
+
+```html
+<img src="html5.gif" alt="HTML5">
+```
+
+* **NÃO DEVE-SE** adicionar espaços antes ou depois dos sinais de atribuição. Definições sem espaço são mais fáceis de ler e agrupa as entidades melhor em conjunto.
+
+Errado:
+
+```html
+<link rel = "stylesheet" href = "styles.css">
+```
+
+Correto:
+
+```html
+<link rel="stylesheet" href="styles.css">
+```
+
+* **DEVE-SE** escrever comentários curtos em uma única linha;
+* **DEVE-SE** escrever comentários longos em múltiplas linhas;
+
+Correto: (comentário curto)
+
+```html
+<!-- This is a comment -->
+```
+
+Correto: (comentário longo)
+
+```html
+<!-- 
+  This is a long comment example. This is a long comment example.
+  This is a long comment example. This is a long comment example.
+-->
+```
+
+
+
+
 
 [Anterior](html.md) ... [Próxima](html-02-metadados.md)
 
