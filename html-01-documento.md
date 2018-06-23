@@ -210,7 +210,7 @@ Correto:
 # 4. Regras gerais
 
 * **DEVE-SE** fechar todos os elementos que permitam conteúdo (por exemplo, a tag `<p>`). O HTML5 permite tags abertas, mas isso não é recomendado.
-* **DEVE-SE** omitir o sinal de fechamento que não permitam conteúdo, (por exemplo, nas tags img, br e link);
+* **DEVE-SE** omitir o sinal de fechamento nas tags que não permitam conteúdo, (por exemplo, nas tags `<img>`, `<br>` e `<link>`);
 
 Errado:
 
