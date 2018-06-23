@@ -97,6 +97,27 @@ Certo:
 </head>
 ```
 
+* **DEVE-SE** usar sempre os nomes de arquivos em "slug case", ou seja, **"Meu_Script.js" ou "MeuScript.js"** deve ser escrito como **"meu-script.css"**; 
+* **DEVE-SE** usar sempre os nomes de arquivos em minúsculas, por convenção. 
+
+> Servidores web no Unix (Apache, Nginx) são "case sensitive", ou seja, arquivos chamados "london.jpg" nao podem ser acessados como "London.jpg". Servidores web no windows (Microsoft IIS) não são "case sensitive", ou seja, "london.jpg" pode ser acessado como "London.jpg" ou "LONDON.jpg". Juntar minúsculas e maiúsculas vai gerar inconsistência no projeto, forçando-o a ser executado apenas em um tipo de sistema operacional (ou Windows ou Unix). Para evitar isso, use sempre os nomes de arquivos incluídos no html em minúsculas. 
+
+Errado:
+
+```html
+<script src="/js/Jquery.min.js"></script>
+<script src="/js/AjustesIE.js"></script>
+<script src="/js/MAIN.js"></script>
+```
+
+Correto:
+
+```html
+<script src="/js/jquery.min.js"></script>
+<script src="/js/ajustes-ie.js"></script>
+<script src="/js/main.js"></script>
+```
+
 # 3. Blocos de Scripts
 
 **NÃO DEVE-SE** usar o atributo *type* para blocos de scripts. No HTML5, o valor padrão para o elemento script já é *text/javascript*. 
