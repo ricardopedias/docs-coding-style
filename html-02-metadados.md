@@ -275,6 +275,27 @@ Certo:
 </head>
 ```
 
+* **DEVE-SE** usar sempre os nomes de arquivos lincados em "slug case", ou seja, **"Meu_Arquivo.css" ou "MeuArquivo.css"** deve ser escrito como **"meu-arquivo.css"**; 
+* **DEVE-SE** usar sempre os nomes de arquivos lincados em minúsculas, por convenção. 
+
+> Servidores web no Unix (Apache, Nginx) são "case sensitive", ou seja, arquivos chamados "london.jpg" nao podem ser acessados como "London.jpg". Servidores web no windows (Microsoft IIS) não são "case sensitive", ou seja, "london.jpg" pode ser acessado como "London.jpg" ou "LONDON.jpg". Juntar minúsculas e maiúsculas vai gerar inconsistência no projeto, forçando-o a ser executado apenas em um tipo de sistema operacional (ou Windows ou Unix). Para evitar isso, use sempre os nomes de arquivos incluídos no html em minúsculas. 
+
+Errado:
+
+```html
+<link href="/css/Principal.css" rel="stylesheet">
+<link href="/css/AjustesIE.css" rel="stylesheet">
+<link href="/css/TEMA.css" rel="stylesheet">
+```
+
+Correto:
+
+```html
+<link href="/css/principal.css" rel="stylesheet">
+<link href="/css/ajustes-ie.css" rel="stylesheet">
+<link href="/css/tema.css" rel="stylesheet">
+```
+
 # 6. Blocos de Estilos
 
 **DEVE-SE** omitir o atributo *type* para blocos de estilos. No HTML5, o valor padrão para o elemento style já é *text/css*:
