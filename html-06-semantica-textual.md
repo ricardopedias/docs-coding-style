@@ -339,4 +339,4 @@ Correto:
 <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 ```
 
-[Anterior](html-07-microdata.md) ... 
+[Anterior](html-05-semantica-estrutural.md) ... [Próxima](html-07-implementando-postagens.md) ... html-08-implementando-listas-de-postagens.md

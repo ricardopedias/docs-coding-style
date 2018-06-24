@@ -357,5 +357,4 @@ Correto:
 </article>
 ```
 
-[Anterior](html-04-corpo.md) ... [Próxima](html-06-lista-de-postagens.md)
-
+[Anterior](html-06-semantica-textual.md) ... [Próxima](html-08-implementando-listas-de-postagens.md)

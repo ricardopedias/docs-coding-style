@@ -130,7 +130,13 @@
 
 ...
 
+...
 
+...
+
+...
+
+...
 
 
 
@@ -274,5 +280,5 @@
 
 
 
-[Anterior](html-05-postagem.md) ... [Próxima](html-07-conteudo-textual.md)
+[Anterior](html-08-implementando-listas-de-postagens.md) ... 
 

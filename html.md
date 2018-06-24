@@ -15,12 +15,13 @@
 
 * [Documento HTML](html-01-documento.md)
 * [Metadados](html-02-metadados.md)
-* [Scripts](html-03-scripts.md)
-* [Corpo do Documento](html-04-corpo.md)
-* [Implementando uma Postagem](html-05-postagem.md)
-* [Implementando Listas de Postagens](html-06-lista-de-postagens.md)
-* [Conteúdo Textual](html-07-conteudo-textual.md)
-* [Microdata](html-08-microdata.md)
+* [Estilos](html-03-estilos.md)
+* [Scripts](html-04-scripts.md)
+* [Semântica Estrutural](html-05-semantica-estrutural.md)
+* [Semântica Textual](html-06-semantica-textual.md)
+* [Implementando uma Postagem](html-07-implementando-postagens.md)
+* [Implementando Listas de Postagens](html-08-implementando-listas-de-postagens.md)
+
 
 
 

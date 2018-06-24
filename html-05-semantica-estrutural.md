@@ -1,4 +1,4 @@
-# HTML - Corpo do Documento
+# HTML - Semântica Estrutural
 
 * [Principal](readme.md)
 * [Índice HTML](html.md)
@@ -325,5 +325,5 @@ As tags semânticas dão poder ao HTML e são adoradas pelos mecanismos de busca
 </html>
 ```
 
-[Anterior](html-03-scripts.md) ... [Próxima](html-05-postagem.md)
+[Anterior](html-04-scripts.md) ... [Próxima](html-06-semantica-textual.md)
 

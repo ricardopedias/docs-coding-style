@@ -197,5 +197,5 @@ Certo:
 <script async defer src="//example.com/widget.js"></script>
 ```
 
-[Anterior](html-02-metadados.md) ... [Próxima](html-04-corpo.md)
+[Anterior](html-03-estilos.md) ... [Próxima](html-05-semantica-estrutural.md)
 
