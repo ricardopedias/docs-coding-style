@@ -328,7 +328,7 @@ Errado:
 Correto:
 
 ```html
-<p><a href="/pdf" rel="alternate" type="application/pdf">Verao em PDF</a> está disponível.</p>
+<p><a href="/pdf" rel="alternate" type="application/pdf">Versão em PDF</a> está disponível.</p>
 ```
 
 [Anterior](html-05-semantica-estrutural.md) ... [Próxima](html-07-implementando-postagens.md)
