@@ -4,30 +4,29 @@
 * [Índice HTML](html.md)
 
 
-## hgroup
+# 1. O elemento hgroup
 
-* **NÃO DEVE-SE** usar a tag `<hgroup>`. A [W3C removeu esta tag](http://lists.w3.org/Archives/Public/public-html-admin/2013Apr/0003.html).
+**NÃO DEVE-SE** usar a tag `<hgroup>`. A [W3C removeu esta tag](http://lists.w3.org/Archives/Public/public-html-admin/2013Apr/0003.html).
 
 Errado:
 
 ```html
 <hgroup>
-  <h1>HTML Best Practices</h1>
-  <h2>For writing maintainable and scalable HTML documents.</h2>
+  <h1>Super Mario Bros.</h1>
+  <h2>Mario e Luigi são heróis que vestem macacão, comem cogumelos, ficam gigantes e entram pelo cano.</h2>
 </hgroup>
 ```
 
 Correto:
 
 ```html
-<h1>HTML Best Practices</h1>
-<p>For writing maintainable and scalable HTML documents.</p>
+<h1>Super Mario Bros.</h1>
+<p>Mario e Luigi são heróis que vestem macacão, comem cogumelos, ficam gigantes e entram pelo cano.</p>
 ```
 
-## abbr
+# 2. O elemento abbr
 
-* **DEVE-SE** adicionar o atributo "title" na tag `<abbr>`.
-There is no other way to represent its expansion.
+**DEVE-SE** adicionar o atributo *"title"* na tag `<abbr>` (abreviação). O *"title"* contém o valor que explica a abreviação.
 
 Errado:
 
@@ -38,12 +37,12 @@ Errado:
 Correto:
 
 ```html
-<abbr title="Ricardo Pereira Dias">RPD</abbr>
+<abbr title="Raccoon City Police Department">RPD</abbr>
 ```
 
-## code
+# 3. O elemento code
 
-* **DEVE-SE** especificar a linguagem de programação da tag `<code>` através do atributo "class", prefixando com a palavra "language-". Embora isso não seja muito formal, é mencionado na [especificação da W3C](https://www.w3.org/TR/html52/textlevel-semantics.html#the-code-element).
+**DEVE-SE** especificar a linguagem de programação da tag `<code>` através do atributo "class", prefixando com a palavra "language-". Embora isso não seja muito formal, é mencionado na [especificação da W3C](https://www.w3.org/TR/html52/textlevel-semantics.html#the-code-element).
 
 Errado:
 
@@ -57,38 +56,37 @@ Correto:
 <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 ```
 
-## i, em, b e strong
+# 4. Os elementos i, em, b e strong
 
-As tags `<i>`, `<em>`, `<b>` e `<strong>` são comumente confundidas ou utilizadas erroneamente pelo fato de geralmente terem o mesmo tipo de renderização no browser (as duas primeiras tendo o texto em itálico, e as duas últimas sendo em negrito). Mas seus significados diferem, sendo que:
+As tags `<i>`, `<em>`, `<b>` e `<strong>` são comumente confundidas ou utilizadas erroneamente pelo fato de geralmente terem o mesmo tipo de renderização no navegador (as duas primeiras tendo o texto em itálico, e as duas últimas sendo em negrito). Mas seus significados diferem, sendo que:
 
 
-* **DEVE-SE** usar `<i>` para designar um texto de destaque diferenciado, como em termos especiais ou uso em taxonomia;
+**DEVE-SE** usar `<i>` para designar um texto de destaque diferenciado, como em termos especiais ou uso em taxonomia;
 
-* **DEVE-SE** usar `<em>` para dar ênfase em uma palavra (ou frase) que você falaria com entonação diferenciada do resto do texto e que mudaria seu significado.
+**DEVE-SE** usar `<em>` para dar ênfase em uma palavra (ou frase) que você falaria com entonação diferenciada do resto do texto e que poderia mudar seu significado.
 
 
 ```html
 <p>
-    A arvore, de nome em latin <i>Araucária brasiliensis</i>
+    A árvore, de nome em latin <i>Araucária brasiliensis</i> é bonita.
 </p>
 ```
 
 
 ```html
 <p>
-    E ela jura que <em>não</em> sabe, não é mesmo?!
+    E ela jura que <em>não sabe</em>, não é mesmo?!
 </p>
 ```
 
 
-* **DEVE-SE** usar `<b>` para textos que necessitem ter destaque, mas sem conotação ou explicação explícita;
-* 
-* **DEVE-SE** usar `<strong>` para dar ênfase a uma palavra ou frase de alta importância.
+**DEVE-SE** usar `<b>` para textos que necessitem ter destaque, mas sem conotação ou explicação explícita; 
+**DEVE-SE** usar `<strong>` para dar ênfase a uma palavra ou frase de alta importância.
 
 
 ```html
 <p>
-    O e-mail dela é <b>fulana@email.com</b>
+    O e-mail dela é <b>jill.valentine@gmail.com</b>
 </p>
 ```
 
@@ -103,66 +101,48 @@ As tags `<i>` e `<b>` tinham muita utilidade no início da era web, quando era c
 
 Com a evolução da internet e dos navegadores, e com a criação da linguagem CSS, é ideal que o conteúdo seja estilizado via propriedades CSS, e não via tags (ou atributos) HTML, o que retira a necessidade de utilizar as tags acima para fins visuais e as torna úteis apenas para uso semântico e de usabilidade.
 
-* **NÃO DEVE-SE** usar a tag `<em>` para demonstrar alertas ou cuidado. 
-* **DEVE-SE** usar a tag `<strong>` para demonstrar alertas ou cuidado. 
+**NÃO DEVE-SE** usar a tag `<em>` para demonstrar alertas ou cuidado. 
+**DEVE-SE** usar a tag `<strong>` para demonstrar alertas ou cuidado. 
 
 Errado:
 
 ```html
-<em>Caution!</em>
+<em>Atenção!</em>
 ```
 
 Correto:
 
 ```html
-<strong>Caution!</strong>
+<strong>Atenção!</strong>
 ```
 
-## br
+# 5. O elemento br
 
-* **DEVE-SE** adicionar quebras de linhas após a tag `<br>`
+**DEVE-SE** adicionar quebras de linhas após a tag `<br>`
 
 Errado:
 
 ```html
-<p>Ricardo<br>Pereira<br>Dias</p>
+<p>Mortal<br>Kombat<br>Trilogy</p>
 ```
 
 Correto:
 
 ```html
 <p>
-    Ricardo<br>
-    Pereira<br>
-    Dias
+    Mortal<br>
+    Kombat<br>
+    Trilogy
 </p>
 ```
 
-* **NÃO DEVE-SE** usar tags `<br>` para quebrar linhas apenas para propósito visual.
-* **DEVE-SE** usar tags `<br>` para indicar quebra de linha **DENTRO** de conteúdos textuais apenas.
+**NÃO DEVE-SE** usar tags `<br>` para quebrar linhas apenas para propósito visual.
+**DEVE-SE** usar tags `<br>` para indicar quebra de linha **DENTRO** de conteúdos textuais apenas.
 
-Errado:
+# 6. O elemento span
 
-```html
-<p>
-    <label>Rule name: <input name="rule-name" type="text"></label><br>
-    <label>Rule description:<br>
-    <textarea name="rule-description"></textarea></label>
-</p>
-```
-
-Correto:
-
-```html
-<p><label>Rule name: <input name="rule-name" type="text"></label></p>
-<p><label>Rule description:<br>
-<textarea name="rule-description"></textarea></label></p>
-```
-
-## span
-
-* **DEVE-SE** usar o mínimo possível as tags `<span>`. 
-* **DEVE-SE** usar tags `<span>` somente como último recurso.
+**DEVE-SE** usar o mínimo possível as tags `<span>`. 
+**DEVE-SE** usar tags `<span>` somente como último recurso.
 
 
 Errado:
@@ -177,26 +157,26 @@ Correto:
 Ricardo <em>Pereira Dias</em>
 ```
 
-## address
+# 7. O elemento address
 
-* **DEVE-SE** usar a tag `<address>` somente para informações de contato.
-* **PODE-SE** usar a tag `<address>` para email, rede-social, endereço físico (nome da rua, bairro, etc), número de telefone, ou algo que vc possa entrar em contato.
+**DEVE-SE** usar a tag `<address>` somente para informações de contato.
+**PODE-SE** usar a tag `<address>` para email, rede-social, endereço físico (nome da rua, bairro, etc), número de telefone, ou algo que vc possa entrar em contato.
 
 Errado:
 
 ```html
-<address>No rights reserved.</address>
+<address>Sem direitos reservados.</address>
 ```
 
 Correto:
 
 ```html
-<address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
+<address>Contato: <a href="https://twitter.com/gean">Shinarui Gean</a></address>
 ```
 
-## pre
+# 8. O elemento pre
 
-* **NÃO DEVE-SE** iniciar com nova linha na tag `<pre>`. A primeira nova linha é ignorada pelos navegadores , mas as seguintes são interpretadas.
+**NÃO DEVE-SE** iniciar com nova linha na tag `<pre>`. A primeira nova linha é ignorada pelos navegadores , mas as seguintes são interpretadas.
 
 Errado:
 
@@ -213,33 +193,39 @@ Correto:
 </pre>
 ```
 
-## blockquote
+# 9. O elemento blockquote
 
-* **DEVE-SE** usar a tag apropriada para o conteúdo do elemento `<blockquote>`. 
+**DEVE-SE** usar a tag apropriada para o conteúdo do elemento `<blockquote>`. 
 
 Errado:
 
 ```html
-<blockquote>For writing maintainable and scalable HTML documents.</blockquote>
+<blockquote>
+    Eu trocaria uma mina de diamantes por um copo de água pura da nascente.
+</blockquote>
 ```
 
 Correto:
 
 ```html
 <blockquote>
-  <p>For writing maintainable and scalable HTML documents.</p>
+  <p>
+  Eu trocaria uma mina de diamantes por um copo de água pura da nascente.
+  </p>
 </blockquote>
 ```
 
-* **NÃO DEVE-SE** incluir a atribuição diretamente na tag `<blockquote>`.
+**NÃO DEVE-SE** incluir a atribuição diretamente na tag `<blockquote>`.
 
 Errado:
 
 ```html
 <blockquote>
-  <p>For writing maintainable and scalable HTML documents.</p>
+  <p>
+  Eu trocaria uma mina de diamantes por um copo de água pura da nascente.
+  </p>
 
-  <p>— HTML Best Practices</p>
+  <p>— Júlio Verne (Viagem ao Centro da Terra, 1864)</p>
 </blockquote>
 ```html
 
@@ -247,10 +233,12 @@ Aceitável:
 
 ```html
 <blockquote>
-  <p>For writing maintainable and scalable HTML documents.</p>
+  <p>
+  Eu trocaria uma mina de diamantes por um copo de água pura da nascente.
+  </p>
 </blockquote>
 
-<p>— HTML Best Practices</p>
+<p>— Júlio Verne (Viagem ao Centro da Terra, 1864)</p>
 ```
 
 Correto: (recomendado pela WHATWG):
@@ -258,10 +246,12 @@ Correto: (recomendado pela WHATWG):
 ```html
 <figure>
   <blockquote>
-    <p>For writing maintainable and scalable HTML documents.</p>
+    <p>
+    Eu trocaria uma mina de diamantes por um copo de água pura da nascente.
+    </p>
   </blockquote>
 
-  <figcaption>— HTML Best Practices</figcaption>
+  <figcaption>— Júlio Verne (Viagem ao Centro da Terra, 1864)</figcaption>
 </figure>
 ```
 
@@ -269,22 +259,24 @@ Correto: (recomendado pela W3C):
 
 ```html
 <blockquote>
-  <p>For writing maintainable and scalable HTML documents.</p>
+  <p>
+  Eu trocaria uma mina de diamantes por um copo de água pura da nascente.
+  </p>
 
-  <footer>— HTML Best Practices</footer>
+  <footer>— Júlio Verne (Viagem ao Centro da Terra, 1864)</footer>
 </blockquote>
 ```
 
-## a
+# 10. O elemento a (âncora)
 
-* **NÃO DEVE-SE** separar o mesmo link quando vários elementos estiverem agrupados (exceto se tratar-se de elementos interativos como controles de formulário, etc)
+**NÃO DEVE-SE** separar o mesmo link quando vários elementos estiverem agrupados (exceto se tratar-se de elementos interativos como controles de formulário, etc)
 
 Errado:
 
 ```html
 <h1><a href="https://whatwg.org/">WHATWG</a></h1>
 
-<p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
+<p><a href="https://whatwg.org/">Uma comunidade envolvida com HTML desde 2004.</a></p>
 ```
 
 Correto:
@@ -293,50 +285,50 @@ Correto:
 <a href="https://whatwg.org/">
   <h1>WHATWG</h1>
 
-  <p>A community maintaining and evolving HTML since 2004.</p>
+  <p>Uma comunidade envolvida com HTML desde 2004.</p>
 </a>
 ```
 
-* **DEVE-SE** usar o atributo "download" para forçar o download de um recurso.
+**DEVE-SE** usar o atributo "download" para forçar o download de um recurso.
 
 Errado:
 
 ```html
-<a href="/downloads/offline.zip">offline version</a>
+<a href="/downloads/mediakit.zip">Download do MediaKit</a>
 ```
 
 Correto:
 
 ```html
-<a download href="/downloads/offline.zip">offline version</a>
+<a download href="/downloads/mediakit.zip">Download do MediaKit</a>
 ```
 
-* **DEVE-SE** usar os atributos "rel", "hreflang" e "type" sempre que for apropriado. Essas informações ajudam as aplicações sbre como lidar com o recurso vinculado no atributo "href".
+**DEVE-SE** usar os atributos *"rel"*, *"hreflang"* e *"type"* sempre que for apropriado. Essas informações ajudam as aplicações sbre como lidar com o recurso vinculado no atributo "href".
 
 Errado:
 
 ```html
-<a href="/ja/pdf">Japanese PDF version</a>
+<a href="/ja/pdf">PDF na versão Japonesa</a>
 ```
 
 Correto:
 
 ```html
-<a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
+<a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">PDF na versão Japonesa</a>
 ```
 
-* **DEVE-SE** ficar claro no texto do link sobre o recurso vinculado. Ou seja, o texto do link deve ser o rótulo de seu recurso vinculado.
+**DEVE-SE** ficar claro no texto do link sobre o recurso vinculado. Ou seja, o texto do link deve ser o rótulo de seu recurso vinculado. Isso ajuda o usuário e também o Google a determinar do que se trata o link. 
 
 Errado:
 
 ```html
-<p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
+<p><a href="/pdf" rel="alternate" type="application/pdf">Clique aqui</a> para ver a versão em PDF.</p>
 ```
 
 Correto:
 
 ```html
-<p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
+<p><a href="/pdf" rel="alternate" type="application/pdf">Verao em PDF</a> está disponível.</p>
 ```
 
-[Anterior](html-05-semantica-estrutural.md) ... [Próxima](html-07-implementando-postagens.md) ... html-08-implementando-listas-de-postagens.md
+[Anterior](html-05-semantica-estrutural.md) ... [Próxima](html-07-implementando-postagens.md)

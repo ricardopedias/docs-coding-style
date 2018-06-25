@@ -194,4 +194,4 @@ Certo:
 </head>
 ```
 
-[Anterior](html-02-metadados.md) ... [Próxima](html-04-scripts.md)
+[Anterior](html-02-cabecalho-do-documento.md) ... [Próxima](html-04-scripts.md)

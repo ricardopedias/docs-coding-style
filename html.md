@@ -14,7 +14,7 @@
 ## Índice
 
 * [Documento HTML](html-01-documento.md)
-* [Metadados](html-02-metadados.md)
+* [Cabeçalho do Documento](html-02-cabecalho-do-documento.md)
 * [Estilos](html-03-estilos.md)
 * [Scripts](html-04-scripts.md)
 * [Semântica Estrutural](html-05-semantica-estrutural.md)

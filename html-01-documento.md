@@ -305,15 +305,16 @@ Correto:
 Correto: (comentário curto)
 
 ```html
-<!-- This is a comment -->
+<!-- Este é um comentário curto -->
 ```
 
 Correto: (comentário longo)
 
 ```html
 <!-- 
-  This is a long comment example. This is a long comment example.
-  This is a long comment example. This is a long comment example.
+  Este é um comentário longo. Foi necessário escrever este 
+  comentário para demonstrar como deve ficar a disposição 
+  de um comentário bem longo no HTML.
 -->
 ```
 
@@ -321,5 +322,5 @@ Correto: (comentário longo)
 
 
 
-[Anterior](html.md) ... [Próxima](html-02-metadados.md)
+[Anterior](html.md) ... [Próxima](html-02-cabecalho-do-documento.md)
 

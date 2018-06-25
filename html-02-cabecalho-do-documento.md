@@ -36,13 +36,11 @@ Correto
 </html>
 ```
 
-# 2. As tags de metadados
-
-As tags usadas para metadados são title, meta, link e base.
+# 2. Metadados de Cabeçalho
 
 * **PODE-SE** usar a tag `<meta>` em qualquer lugar dentro do container `<head>` e `<body>`;
 * **PODE-SE** adicionar as tags `<link>` no container `<head>` ou em conjunto com microdatas dentro do `<body>`.
-* **DEVE-SE** sempre inserir os outros metadados na tag `<head>`.
+* **DEVE-SE** sempre inserir os outros metadados no seu devido contexto.
 
 
 # 3. Codificação de Caracteres
@@ -84,7 +82,7 @@ Correto:
 </head>
 ```
 
-**NÃO DEVE-SE** usar codificação de caracteres antiga. Http headers correspondentes já são enviados automaticamente pelos servidores com as informações do antigo Content-Type:
+**NÃO DEVE-SE** usar o formato antigo de codificação de caracteres. O mimetype (text/html) já é declarados automaticamente:
 
 Errado:
 
@@ -102,7 +100,7 @@ Correto:
 </head>
 ```
 
-**DEVE-SE** sempre adicionar a codificação de caracteres antes de todos os metadados no container `<head>`. A especificação obriga que a codificação de caracteres esteja entre os primeiros 1024 bytes do documento:
+**DEVE-SE** sempre adicionar a codificação de caracteres antes de todos os metadados no container `<head>`. A especificação obriga que a codificação de caracteres esteja entre os [primeiros 1024 bytes do documento](https://www.w3.org/TR/2012/CR-html5-20121217/document-metadata.html#charset):
 
 Errado:
 
@@ -124,7 +122,7 @@ Correto:
 
 # 4. Elemento title
 
-**DEVE-SE** sempre adicionar o elemento *title*. O valor para o elemento *title* é usado por várias aplicações, não somente para o navegador web.
+**DEVE-SE** sempre adicionar a tag `<title>`. O valor desta tag é usado por várias aplicações, não somente pelo navegador web.
 
 Errado:
 
@@ -145,7 +143,7 @@ Certo:
 
 # 5. Elemento base
 
-**NÃO DEVE-SE** adicionar a tag *base*! Um caminho absoluto ou relativo é mais seguro tanto para desenvolvedores como para os leitores de tela.
+**NÃO DEVE-SE** adicionar a tag `<base>`! Um caminho absoluto ou relativo é mais seguro tanto para a consistência do código HTML como para os leitores de tela.
 
 Errado:
 
