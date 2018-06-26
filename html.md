@@ -19,8 +19,9 @@
 * [Scripts](html-04-scripts.md)
 * [Semântica Estrutural](html-05-semantica-estrutural.md)
 * [Semântica Textual](html-06-semantica-textual.md)
-* [Implementando uma Postagem](html-07-implementando-postagens.md)
-* [Implementando Listas de Postagens](html-08-implementando-listas-de-postagens.md)
+* [Search Engine Optimization](html-07-search-engine-optimization.md)
+* [Implementando uma Postagem](html-08-implementando-postagens.md)
+* [Implementando Listas de Postagens](html-09-implementando-listas-de-postagens.md)
 
 
 

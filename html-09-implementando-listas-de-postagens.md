@@ -280,5 +280,5 @@
 
 
 
-[Anterior](html-08-implementando-listas-de-postagens.md) ... 
+[Anterior](html-08-implementando-postagens.md) ... 
 
