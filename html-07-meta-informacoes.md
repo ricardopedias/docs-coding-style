@@ -43,7 +43,7 @@ Para determinar como o documento HTML deve ser indexado pelos robôs de busca, d
 
 A função desta tag é informar aos robôs de busca se devem indexar o documento HTML ou não.
 
-> Se o objetivo for impedir que os robôs de busca acessem determinadas áreas (áreas inteiras como uma categoria de artigos, por exemplo, http://www.cidadejardim.com.br/artigos-ocultos/*) do seu site, prefira utilizar um arquivo "robots.txt" na raiz do site, pois será mais fácil gerenciar o que deve ou não ser acessado.
+> Se o objetivo for impedir que os robôs de busca acessem determinadas áreas (áreas inteiras como uma categoria de artigos, por exemplo, `http://www.spidey.com/artigos-ocultos/*`) do seu site, prefira utilizar um arquivo "robots.txt" na raiz do site, pois será mais fácil gerenciar o que deve ou não ser acessado.
 
 A pergunta é: se é possivel gerenciar isso pelo arquivo *"robots.txt"*, porque usar meta informações para isso?
 
@@ -104,10 +104,10 @@ Abaixo, uma lista com os proncipais robôs de busca e seus respectivos user-agen
 | Nome                  | User Agent                |
 |:---:                  |:---:                      |
 | Google                | googlebot                 |
-| Google News           | googlebot-News            |
-| Google Images         | googlebot-Image/1.0       |
-| Google Video          | googlebot-Video/1.0       |
-| Google Adsense        | mediapartners-Google      |
+| Google News           | googlebot-news            |
+| Google Images         | googlebot-image/1.0       |
+| Google Video          | googlebot-video/1.0       |
+| Google Adsense        | mediapartners-google      |
 | Google App Crawler    | adsbot-google-mobile-apps |
 | Bing                  | bingbot                   |
 | Slurp Bot             | slurp                     |
@@ -147,7 +147,7 @@ Abaixo, uma lista de tipos de metadados por ordem de importância:
 ## 3.2. Metadados Nativos
 
 As meta informações nativas do HTML não precisam de nenhuma configuração, basta adicioná-las na tag `<head>` do documento html.
-No exemplo abaixo, quatro meta informações são adicionadas: meta charset, title, meta description e meta keywords e link canonical.
+No exemplo abaixo, cinco meta informações são adicionadas: meta charset, title, meta description, meta keywords e link canonical.
 
 
 ```html
@@ -175,9 +175,9 @@ No exemplo abaixo, quatro meta informações são adicionadas: meta charset, tit
 
 Depois dos metadados nativos, as microdatas são as mais importantes, justamente por terem sido assumidas e apoiadas pelo Google.
 
-Os atributos especiais chamados de ***"microdatas"*** são uma forma de classificar os valores já existentes em uma página html, atrelando-os a definições específicas para que os mecanismos de busca possam entender o conteúdo com mais exatidão.
+Os atributos especiais chamados de ***microdatas*** são uma forma de classificar os valores já existentes em uma página html, atrelando-os a definições específicas para que os mecanismos de busca possam entender o conteúdo com mais exatidão.
 
-Para as microdatas serem identificadas pelos mecanismos de busca, é preciso declarar que o elemento escolhido servirá como um container de escopo, adicionando a ele o atributo ***"itemscope"***. Uma vez declarado o elemento como escopo de microdatas, é preciso definir o tipo do escopo, adicionando o atributo ***"itemtype"***. 
+Para as microdatas serem identificadas pelos mecanismos de busca, é preciso declarar que o elemento escolhido servirá como um container de escopo, adicionando a ele o atributo ***itemscope***. Uma vez declarado o elemento como escopo de microdatas, é preciso definir o tipo do escopo, adicionando o atributo ***itemtype***. 
 
 Sem Microdata:
 
@@ -222,7 +222,7 @@ Dependendo da tag, o valor da microdata possui diferentes origens. abaixo, uma t
 
 
 | Tag           |  Localização do valor            |  Exemplo                                       |
-|:-------------:|:--------------------------------:|:----------------------------------------------:|
+|:-------------:|:--------------------------------:|:-----------------------------------------------|
 | `<meta>`      |  Atributo content                | `<meta itemprop="latitude" content="37.4149">` |
 | `<audio>`     |  Atributo src                    | `<audio itemprop="contentUrl" src="horse.ogg"></audio>`
 | `<embed>`     |  Atributo src                    |	`<embed  itemprop="contentUrl" src="helloworld.swf">`
@@ -244,11 +244,11 @@ Para testar as microdatas e descobrir os tipos de escopo disponíveis, acesse [h
 ## 3.4. OpenGraph metadados
 
 Por último na classificação dos três tipos mais importantes se encontra o OpenGraph, desenvolvido pela equipe do Facebook. 
-Embora também possam ser analizados pelos motores de busca, o opengraph contém metadados usados principalmente para que as informações de uma página HTML seja interpretada por redes sociais que compartilhem conteúdo da internet, como o Facebook ou o Twitter, por exemplo.
+Embora também possam ser analisados pelos robôs de busca, o opengraph contém metadados usados principalmente para que as informações de uma página HTML seja interpretada por redes sociais que compartilhem conteúdo da internet, como o Facebook ou o Twitter, por exemplo.
 
 Quando um usuário do facebook compartilha o URL de uma página que contém metadados opengraph, o facebook é notificado sobre qual título, descrição e imagem usar para formatar o Post do usuário na timeline da rede social.
 
-Para essas informações sejam identificadas pelas redes sociais, é preciso declarar que o documento HTML contém metadados opengraph, adicionando ao container `<html>` o atributo ***"prefix"***, que deve conter um prefixos seguido do tipo do escopo ao qual a página HTML pertence.
+Para essas informações sejam identificadas pelas redes sociais, é preciso declarar que o documento HTML contém metadados opengraph, adicionando ao container `<html>` o atributo ***prefix***, que deve conter um prefixo seguido de dois pontos ***:*** e do tipo do escopo ao qual a página HTML pertence.
 
 
 Sem Open Graph:
@@ -345,9 +345,9 @@ Para testar as tags do opengraph você pode usar o [Debugger do Facebook](https:
 # 4. Referência de meta informações
 
 Abaixo está organizada uma lista de tags para serem utilizadas no container `<head>` dos documentos html.
-A lista é classificada por parâmetros, sempre exibindo os três tipos de metadados:
+A lista é classificada por parâmetros, sempre exibindo os três tipos de metadados, quando possuírem uma notação disponível:
 
-# 4.1. Título
+## 4.1. Título
 
 | Tipo         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
@@ -356,7 +356,7 @@ A lista é classificada por parâmetros, sempre exibindo os três tipos de metad
 | Opengraph    | `<meta property="og:title" content="Homem Aranha Home Page"`                 |
 
 
-# 4.2. Descrição
+## 4.2. Descrição
 
 | Tipo         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
@@ -367,7 +367,11 @@ A lista é classificada por parâmetros, sempre exibindo os três tipos de metad
 
 
 
+...
 
+...
+
+...
 
 
 
