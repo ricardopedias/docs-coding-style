@@ -1,4 +1,4 @@
-# HTML - Meta Informations
+# HTML - Meta Informações
 
 * [Principal](readme.md)
 * [Índice HTML](html.md)
@@ -10,22 +10,17 @@ Uma parte importante do SEO é a adição de informações que expliquem de form
 Este documento não tem o objetivo de explicar sobre SEO, mas definir um parâmetro para aplicação das tags e atributos semanticamente corretos.
 
 
-# 1. Declaração para indexação
+# 1. Regras gerais
 
-**DEVE-SE** sempre adicionar a tag meta configurando como a página deve ser indexada.
-
-```html
-<meta name="robots" content="index, follow">
-```
-
-# 2. Títulos, descrições e palavras-chave
+**DEVE-SE** sempre adicionar a tag `<meta name="robots" content="...">` configurando como os robôs de busca devem se comportar ao visitar o documento HTML;
 
 **DEVE-SE** tentar escrever títulos com no máximo 55 caracteres. Mais do que isso poderá será ignorado pelo Google;
 
 **DEVE-SE** tentar escrever descrições de no máximo 155 caracteres. Mais do que isso poderá será ignorado pelo Google;
 
-**SAIBA** que Google [ignora as tags `<meta name="keywords">` para a indexação de páginas](http://googlewebmastercentral.blogspot.in/2009/09/google-does-not-use-keywords-meta-tag.html). Mas você pode utilizá-las mesmo assim.
+**DEVE-SE** tentar escrever todas as palavras chave com no máximo 155 caracteres. Mais do que isso poderá será ignorado pelo Google;
 
+**SAIBA** que o Google [ignora as tags `<meta name="keywords">` para a indexação de páginas](http://googlewebmastercentral.blogspot.in/2009/09/google-does-not-use-keywords-meta-tag.html). Mas você pode utilizá-las mesmo assim, pois as meta keywords ainda podem ajudar a categorizar o conteúdo da sua página.
 
 Mais informações sobre a limitação de caracteres em titulos e descrições em:
 
@@ -34,32 +29,134 @@ Mais informações sobre a limitação de caracteres em titulos e descrições e
 * [http://www.swellpath.com/2014/05/update-new-title-tag-meta-description-character-lengths](http://www.swellpath.com/2014/05/update-new-title-tag-meta-description-character-lengths)
 
 
-# 3. Os tipos de meta informações
+# 2. Robôs de Busca
 
-Existem vários tipos de meta informações que podem ser usadas em uma página HTML. Existem metadados exclusivos para o navegadores (Internet Explorer, Google Chrome), para leitores de tela não convencionais e até dispositivos móveis (Apple, Microsoft, etc).
+## 2.1. Controlando os robôs de busca
+
+Para determinar como o documento HTML deve ser indexado pelos robôs de busca, deve-se adicionar a tag `<meta name="robots" content="...">` no container `<head>`.
+
+```html
+<meta name="robots" content="index,follow">
+```
+
+A função desta tag é informar aos robôs de busca se devem indexar o documento HTML ou não.
+
+> Se o objetivo for impedir que os robôs de busca acessem determinadas áreas (áreas inteiras como uma categoria de artigos, por exemplo, http://www.cidadejardim.com.br/artigos-ocultos/*) do seu site, prefira utilizar um arquivo "robots.txt" na raiz do site, pois será mais fácil gerenciar o que deve ou não ser acessado.
+
+A pergunta é: se é possivel gerenciar isso pelo arquivo *"robots.txt"*, porque usar meta informações para isso?
+
+Quando você utiliza pop-ups ou iframes para mostrar o conteúdo do seu site, por exemplo, não é interessante que os robôs de busca indexem essas páginas, afinal, se elas forem acessadas individualmente, não vão significar nada e não trarão visitação relevante ao seu site. Excluir estas páginas da indexação através do arquivo *"robots.txt"* pode ser chato, trabalhoso e fadado a erros, tornando o arquivo extenso. Sendo assim, é mais inteligente e conveniente adicionar meta informações para forçar as diretivas diretamente nas páginas de pop-ups ou iframes.
+
+Se os documentos HTML forem gerados dinamicamente por uma linguagem de servidor (como PHP ou Java), prefira adicionar as meta informações em todos os documentos, mesmo que seu site esteja usando um arquivo *"robots.txt"*.
+
+## 2.2. Configurando o documento HTML
+
+Os valores de configuração podem ser especificados em conjunto, separando as diretivas por vírgulas, ou separadamente, com cada diretiva em uma nova tag meta.
+
+Em conjunto:
+
+```html
+<meta name="robots" content="index,follow,noarchive">
+```
+
+Separadamente:
+
+```html
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="robots" content="noarchive">
+```
+
+A possíveis diretivas para esta meta informação são:
+
+* **noindex**: o robô de busca não deve indexar a página;
+* **index**: informa o robô de busca para indexar a página;
+* **follow**: mesmo que a página não seja indexada, o robô de busca deve seguir todos os links do documento e efetuar a verificação neles também;
+* **nofollow**: informa o robô de busca para não seguir nenhum link do documento;
+* **noimageindex**: informa o robô de busca para não indexar nenhuma imagem em uma página;
+* **none**: equivalente a usar as diretivas *noindex* e *nofollow* simultaneamente;
+* **noarchive**: os robôs de busca não devem mostrar um link em cache para esta página em uma SERP;
+* **nocache**: o mesmo que *noarchive*, mas usado apenas pelo *Internet Explorer* e *Firefox*.
+* **nosnippet**: informa o robô de busca para não mostrar um trecho desta página (ou seja, meta descrição) desta página em uma SERP;
+* **unavailable_after**: informa o robô de busca para não exibir esta página nos resultados da pesquisa após a data/hora especificada. A data/hora precisa ser especificada no formato RFC 850.
+
+Um exemplo de uso da diretiva *unavailable_after*:
+
+```html
+<meta name="robots" content="unavailable_after: 10-Jan-1980 10:10:00 UTC">
+```
+
+> Nota: se você deseja que o documento seja divulgado, evite usar a opção noarchive, pois isso poderá diminuir a exposição.
+
+## 2.3. Controlando um robô específico
+
+É possivel também especificar estas mesmas informações, restrigindo-as para um robô de busca específico.
+Por exemplo, para declarar que apenas o robô *Googlebot* não deve indexar o documento, troque a meta informação *"robots"* pelo user-agent do *Googlebot*:
+
+```html
+<meta name="googlebot" content="noindex,nofollow">
+```
+
+Abaixo, uma lista com os proncipais robôs de busca e seus respectivos user-agents:
+
+| Nome                  | User Agent                |
+|:---:                  |:---:                      |
+| Google                | googlebot                 |
+| Google News           | googlebot-News            |
+| Google Images         | googlebot-Image/1.0       |
+| Google Video          | googlebot-Video/1.0       |
+| Google Adsense        | mediapartners-Google      |
+| Google App Crawler    | adsbot-google-mobile-apps |
+| Bing                  | bingbot                   |
+| Slurp Bot             | slurp                     |
+| Duck Duck Bot         | duckduckbot               |
+| Baidu Spider          | baiduspider               |
+| Baidu Image Search    | baiduspider-image         |
+| Baidu Video Search    | baiduspider-video         |
+| Baidu News Search     | baiduspider-news          |
+| Baidu Baidu wishlists | baiduspider-favo          |
+| Baidu Baidu Union     | baiduspider-cpro          |
+| Baidu Business Search | baiduspider-ads           |
+| Yandex Bot            | yandexbot                 |
+| Facebook External Hit | facebot                   |
+| Alexa Crawler         | ia_archiver               |
+
+
+Para mais informações, visite:
+
+* [Documento de Robôs do Google](https://developers.google.com/search/reference/robots_meta_tag?hl=pt-br)
+* [Documento da Mozilla SEO](https://moz.com/learn/seo/robots-meta-directives)
+
+
+# 3. Usando meta informações
+
+## 3.1 Os tipos de meta informações
+
+Existem vários tipos de meta informações que podem ser usadas em uma página HTML. Existem metadados exclusivos para o navegadores (Internet Explorer, Google Chrome), para leitores de tela não convencionais e até para dispositivos móveis (Samsung, Apple, Microsoft, etc).
 
 Este documento irá abordar as mais importantes no contexto da SEO, ou seja, que forneçam maior resultado na exposição e divulgação das páginas HTML.
 Abaixo, uma lista de tipos de metadados por ordem de importância:
 
-* 1. Nativos: são meta informações padrões do HTML5, que podem ser adicionadas dentro da tag `<head>` do documento;
-* 2. Microdatas: são meta informações e atributos que aproveitam o conteúdo já existente nas tags, transformando-os em valores de metadados;
-* 3. Opengraph: são meta informações que podem ser adicionadas no documento HTML a fim de compartilhar estes dados nas redes sociais;
+1. **Nativos**: são meta informações padrões do HTML5, que podem ser adicionadas dentro da tag `<head>` do documento;
+2. **Microdatas**: são meta informações e atributos que aproveitam o conteúdo já existente nas tags, transformando-os em valores de metadados;
+3. **Opengraph**: são meta informações que podem ser adicionadas no documento HTML a fim de compartilhar estes dados nas redes sociais;
 
 
-# 4. Usando meta informações
+## 3.2. Metadados Nativos
 
-## 4.1. Metadados Nativos
+As meta informações nativas do HTML não precisam de nenhuma configuração, basta adicioná-las na tag `<head>` do documento html.
+No exemplo abaixo, quatro meta informações são adicionadas: meta charset, title, meta description e meta keywords e link canonical.
 
-As meta informações nativas do HTML não precisam de nenhuma configuração, basta adicioná-las na tag `<head>` do documneto html.
-No exemplo abaixo, três meta informações são adicionadas: title, meta e link.
 
 ```html
 <!DOCTYPE html>
 <html>
     <head>
 
+        <meta charset="ISO-8859-1">
         <title>Cidade Jardim</title>
         <meta name="description" content="O site mais legal do bairro">
+        <meta name="keywords" content="sites, web, desenvolvimento, html, design">
         <link rel="canonical" href="http://www.cidadejardim.com.br/">
         <!-- outros metadados -->
         <!-- outros metadados -->
@@ -72,7 +169,7 @@ No exemplo abaixo, três meta informações são adicionadas: title, meta e link
 </html>
 ```
 
-## 4.2. Microdatas
+## 3.3. Microdatas
 
 Depois dos metadados nativos, as microdatas são as mais importantes, justamente por terem sido assumidas e apoiadas pelo Google.
 
@@ -142,7 +239,7 @@ Dependendo da tag, o valor da microdata possui diferentes origens. abaixo, uma t
 Para testar as microdatas e descobrir os tipos de escopo disponíveis, acesse [https://schema.org](https://schema.org/docs/full.html). Para exemplos e explicações mais detalhadas acesse [https://diveintohtml5.com.br](https://diveintohtml5.com.br/extensibility.html#what-is-microdata). A especificação se encontra na [W3C](https://www.w3.org/TR/microdata/).
 
 
-## 4.3. OpenGraph metadados
+## 3.4. OpenGraph metadados
 
 Por último na classificação dos três tipos mais importantes se encontra o OpenGraph, desenvolvido pela equipe do Facebook. 
 Embora também possam ser analizados pelos motores de busca, o opengraph contém metadados usados principalmente para que as informações de uma página HTML seja interpretada por redes sociais que compartilhem conteúdo da internet, como o Facebook ou o Twitter, por exemplo.
@@ -243,13 +340,12 @@ Para descobrir os metadados opengraph suportados pelo twitter acesse [https://de
 Para testar as tags do opengraph você pode usar o [Debugger do Facebook](https://developers.facebook.com/tools/debug/) ou a [Ferramenta de Testes do Google](https://search.google.com/structured-data/testing-tool).
 
 
-
-# 5. A lista de metadados
+# 4. Referência de meta informações
 
 Abaixo está organizada uma lista de tags para serem utilizadas no container `<head>` dos documentos html.
 A lista é classificada por parâmetros, sempre exibindo os três tipos de metadados:
 
-# 5.1. Título
+# 4.1. Título
 
 | Tipo         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
@@ -257,7 +353,8 @@ A lista é classificada por parâmetros, sempre exibindo os três tipos de metad
 | Microdata    | `<meta itemprop="name" content="Homem Aranha Home Page">`                    |
 | Opengraph    | `<meta property="og:title" content="Homem Aranha Home Page"`                 |
 
-# 5.2. Descrição
+
+# 4.2. Descrição
 
 | Tipo         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
