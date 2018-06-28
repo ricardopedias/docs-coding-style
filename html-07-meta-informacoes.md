@@ -12,6 +12,8 @@ Este documento não tem o objetivo de explicar sobre SEO, mas definir um parâme
 
 # 1. Regras gerais
 
+**DEVE-SE** sempre adicionar a tag `<meta charset="UTF-8">` para configurar a codificação de caracteres, pois a codificação padrão pode variar entre navegadores;
+
 **DEVE-SE** sempre adicionar a tag `<meta name="robots" content="...">` configurando como os robôs de busca devem se comportar ao visitar o documento HTML;
 
 **DEVE-SE** tentar escrever títulos com no máximo 55 caracteres. Mais do que isso poderá será ignorado pelo Google;
@@ -153,11 +155,11 @@ No exemplo abaixo, quatro meta informações são adicionadas: meta charset, tit
 <html>
     <head>
 
-        <meta charset="ISO-8859-1">
-        <title>Cidade Jardim</title>
-        <meta name="description" content="O site mais legal do bairro">
-        <meta name="keywords" content="sites, web, desenvolvimento, html, design">
-        <link rel="canonical" href="http://www.cidadejardim.com.br/">
+        <meta charset="UTF-8">
+        <title>Contato | Homem Aranha Home Page</title>
+        <meta name="description" content="Entre em contato com o Amigo da vizinhança">
+        <meta name="keywords" content="heroismo, quadrinhos, salvador de velhinhas">
+        <link rel="canonical" href="http://www.spidey.com/contato">
         <!-- outros metadados -->
         <!-- outros metadados -->
 
@@ -256,9 +258,9 @@ Sem Open Graph:
 <html>
     <head>
 
-        <title>Cidade Jardim</title>
-        <meta name="description" content="O site mais legal do bairro">
-        <link rel="canonical" href="http://www.cidadejardim.com.br/">
+        <title>Homem Aranha Home Page</title>
+        <meta name="description" content="Site do Amigo da vizinhança">
+        <link rel="canonical" href="http://www.spidey.com/">
         <!-- outros metadados -->
         <!-- outros metadados -->
 
@@ -278,16 +280,16 @@ Com Open Graph para Facebook:
     <head>
 
         <!-- metadados nativos -->
-        <title>Cidade Jardim</title>
-        <meta name="description" content="O site mais legal do bairro">
-        <link rel="canonical" href="http://www.cidadejardim.com.br/">
+        <title>Homem Aranha Home Page</title>
+        <meta name="description" content="Site do Amigo da vizinhança">
+        <link rel="canonical" href="http://www.spidey.com/">
 
         <!-- metadados opengraph -->
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Cidade Jardim">
-        <meta property="og:description" content="O site mais legal do bairro">
-        <meta property="og:url" content="http://www.cidadejardim.com.br/">
-        <meta property="og:image" content="http://www.cidadejardim.com.br/logo.png">
+        <meta property="og:title" content="Homem Aranha Home Page">
+        <meta property="og:description" content="Site do Amigo da vizinhança">
+        <meta property="og:url" content="http://www.spidey.com/">
+        <meta property="og:image" content="http://www.spidey.com/logo.png">
         
         <!-- outros metadados -->
         <!-- outros metadados -->
@@ -308,20 +310,20 @@ Com Open Graph para o Twitter
     <head>
 
         <!-- metadados nativos -->
-        <title>Cidade Jardim</title>
-        <meta name="description" content="O site mais legal do bairro">
-        <link rel="canonical" href="http://www.cidadejardim.com.br/">
+        <title>Homem Aranha Home Page</title>
+        <meta name="description" content="Site do Amigo da vizinhança">
+        <link rel="canonical" href="http://www.spidey.com/">
 
         <!-- metadados somente do twitter -->
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@cidadejardim">
-        <meta name="twitter:creator" content="@ricardopereira">
+        <meta name="twitter:site" content="@spideymarvel">
+        <meta name="twitter:creator" content="@spydeymarvel">
         <!-- metatados compartilhados: facebook + twitter -->
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Cidade Jardim">
-        <meta property="og:description" content="O site mais legal do bairro">
-        <meta property="og:url" content="http://www.cidadejardim.com.br/">
-        <meta property="og:image" content="http://www.cidadejardim.com.br/logo.png">
+        <meta property="og:title" content="Homem Aranha Home Page">
+        <meta property="og:description" content="Site do Amigo da vizinhança">
+        <meta property="og:url" content="http://www.spidey.com/">
+        <meta property="og:image" content="http://www.spidey.com/logo.png">
 
         <!-- outros metadados -->
         <!-- outros metadados -->
