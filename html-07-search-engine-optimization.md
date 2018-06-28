@@ -1,11 +1,13 @@
-# HTML - Search Engine Optimization
+# HTML - Meta Informations
 
 * [Principal](readme.md)
 * [Índice HTML](html.md)
 
 As técnicas de SEO (Search Engine Optimization) são abrangentes e envolvem, além da programação, a forma como as informações são publicadas na internet. Artigos e textos bem elaborados somados às tags e atributos semanticamente corretos resultam numa maior exposição e pontuação nos mecanismos de busca, em especial no Google.
 
-Este documento não tem o objetivo de explicar tudo sobre SEO, mas definir um parâmetro para aplicação das tags e atributos semanticamente corretos.
+Uma parte importante do SEO é a adição de informações que expliquem de forma mais direta aos mecanimsos de busca sobre o que se trata a página HTML. Isso é feito através de meta informações.
+
+Este documento não tem o objetivo de explicar sobre SEO, mas definir um parâmetro para aplicação das tags e atributos semanticamente corretos.
 
 
 # 1. Declaração para indexação
@@ -16,7 +18,7 @@ Este documento não tem o objetivo de explicar tudo sobre SEO, mas definir um pa
 <meta name="robots" content="index, follow">
 ```
 
-# 2. Dados básicos
+# 2. Títulos, descrições e palavras-chave
 
 **DEVE-SE** tentar escrever títulos com no máximo 55 caracteres. Mais do que isso poderá será ignorado pelo Google;
 
@@ -25,11 +27,249 @@ Este documento não tem o objetivo de explicar tudo sobre SEO, mas definir um pa
 **SAIBA** que Google [ignora as tags `<meta name="keywords">` para a indexação de páginas](http://googlewebmastercentral.blogspot.in/2009/09/google-does-not-use-keywords-meta-tag.html). Mas você pode utilizá-las mesmo assim.
 
 
-Mais informações sobre a limitação de caaracteres em titulos e descrições em:
+Mais informações sobre a limitação de caracteres em titulos e descrições em:
 
 * [https://moz.com/blog/new-title-tag-guidelines-preview-tool](https://moz.com/blog/new-title-tag-guidelines-preview-tool)
 * [http://www.sagerock.com/blog/title-tag-meta-description-length](http://www.sagerock.com/blog/title-tag-meta-description-length)
 * [http://www.swellpath.com/2014/05/update-new-title-tag-meta-description-character-lengths](http://www.swellpath.com/2014/05/update-new-title-tag-meta-description-character-lengths)
+
+
+# 3. Os tipos de meta informações
+
+Existem vários tipos de meta informações que podem ser usadas em uma página HTML. Existem metadados exclusivos para o navegadores (Internet Explorer, Google Chrome), para leitores de tela não convencionais e até dispositivos móveis (Apple, Microsoft, etc).
+
+Este documento irá abordar as mais importantes no contexto da SEO, ou seja, que forneçam maior resultado na exposição e divulgação das páginas HTML.
+Abaixo, uma lista de tipos de metadados por ordem de importância:
+
+* 1. Nativos: são meta informações padrões do HTML5, que podem ser adicionadas dentro da tag `<head>` do documento;
+* 2. Microdatas: são meta informações e atributos que aproveitam o conteúdo já existente nas tags, transformando-os em valores de metadados;
+* 3. Opengraph: são meta informações que podem ser adicionadas no documento HTML a fim de compartilhar estes dados nas redes sociais;
+
+
+# 4. Usando meta informações
+
+## 4.1. Metadados Nativos
+
+As meta informações nativas do HTML não precisam de nenhuma configuração, basta adicioná-las na tag `<head>` do documneto html.
+No exemplo abaixo, três meta informações são adicionadas: title, meta e link.
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Cidade Jardim</title>
+        <meta name="description" content="O site mais legal do bairro">
+        <link rel="canonical" href="http://www.cidadejardim.com.br/">
+        <!-- outros metadados -->
+        <!-- outros metadados -->
+
+    </head>
+
+    <body>
+        <!-- mais código html -->
+    </body>
+</html>
+```
+
+## 4.2. Microdatas
+
+Depois dos metadados nativos, as microdatas são as mais importantes, justamente por terem sido assumidas e apoiadas pelo Google.
+
+Os atributos especiais chamados de ***"microdatas"*** são uma forma de classificar os valores já existentes em uma página html, atrelando-os a definições específicas para que os mecanismos de busca possam entender o conteúdo com mais exatidão.
+
+Para as microdatas serem identificadas pelos mecanismos de busca, é preciso declarar que o elemento escolhido servirá como um container de escopo, adicionando a ele o atributo ***"itemscope"***. Uma vez declarado o elemento como escopo de microdatas, é preciso definir o tipo do escopo, adicionando o atributo ***"itemtype"***. 
+
+Sem Microdata:
+
+```html
+<section>
+
+  <h1>Walter Elias Disney</h1>
+  
+  <p><img src="http://www.example.com/disney.jpg" alt="Walter Disney"></p>
+  
+  <p><a href="https://pt.wikipedia.org/wiki/Walt_Disney">Info</a></p>
+  
+</section>
+```
+
+Com Microdata:
+
+```html
+<section itemscope itemtype="http://schema.org/Person">
+
+  <h1 itemprop="name">Walter Elias Disney</h1>
+  
+  <p><img itemprop="image" src="http://www.example.com/disney.jpg" alt="Walter Disney"></p>
+  
+  <p><a itemprop="url" href="https://pt.wikipedia.org/wiki/Walt_Disney">Info</a></p>
+  
+</section>
+```
+
+Analizando o exemplo acima, perceba:
+
+
+| Tag   | Microdata | Origem              | Valor                                     |
+|:-----:|:---------:|:-------------------:|:------------------------------------------:
+| h1    | name      | conteúdo da tag h1  | Walter Elias Disney                       |
+| img   | image     | atributo src        | http://www.example.com/disney.jpg         |
+| a     | url       | atributi href       | https://pt.wikipedia.org/wiki/Walt_Disney |
+
+
+
+Dependendo da tag, o valor da microdata possui diferentes origens. abaixo, uma tabela de referência para saber onde estão os valores para os atributos *itemprop*:
+
+
+| Tag           |  Localização do valor            |  Exemplo                                       |
+|:-------------:|:--------------------------------:|:----------------------------------------------:|
+| `<meta>`      |  Atributo content                | `<meta itemprop="latitude" content="37.4149">` |
+| `<audio>`     |  Atributo src                    | `<audio itemprop="contentUrl" src="horse.ogg"></audio>`
+| `<embed>`     |  Atributo src                    |	`<embed  itemprop="contentUrl" src="helloworld.swf">`
+| `<iframe>`    |  Atributo src                    |	`<iframe itemprop="url" src="/default.php"></iframe>`
+| `<img>`       |  Atributo src                    |	`<img itemprop="image" src="/foto.jpg">`
+| `<source>`    |  Atributo src                    |	`<audio><source itemprop="contentUrl" src="horse.ogg" type="audio/ogg"></audio>`
+| `<video>`     |  Atributo src                    |	`<video itemprop="contentUrl" src="movie.ogg"></video>`
+| `<a>`         |  Atributo href                   |	`<a itemprop="url" href="http://google.com">`
+| `<area>`      |  Atributo href                   |	`<area itemprop="url" shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">`
+| `<link>`      |  Atributo href                   |	`<link itemprop="url" rel="stylesheet" type="text/css" href="theme.css">`
+| `<object>`    |  Atributo data                   |	`<object itemprop="contentUrl" width="400" height="400" data="helloworld.swf"></object>`
+| `<time>`      |  Atributo datetime               |	`<time itemprop="birthday" datetime="2017-02-20">Aniversário</time>`
+| Demais Tags   |  Conteúdo textual                |	`<h1 itemprop="name">Ricardo Pereira</h1>`
+
+
+Para testar as microdatas e descobrir os tipos de escopo disponíveis, acesse [https://schema.org](https://schema.org/docs/full.html). Para exemplos e explicações mais detalhadas acesse [https://diveintohtml5.com.br](https://diveintohtml5.com.br/extensibility.html#what-is-microdata). A especificação se encontra na [W3C](https://www.w3.org/TR/microdata/).
+
+
+## 4.3. OpenGraph metadados
+
+Por último na classificação dos três tipos mais importantes se encontra o OpenGraph, desenvolvido pela equipe do Facebook. 
+Embora também possam ser analizados pelos motores de busca, o opengraph contém metadados usados principalmente para que as informações de uma página HTML seja interpretada por redes sociais que compartilhem conteúdo da internet, como o Facebook ou o Twitter, por exemplo.
+
+Quando um usuário do facebook compartilha o URL de uma página que contém metadados opengraph, o facebook é notificado sobre qual título, descrição e imagem usar para formatar o Post do usuário na timeline da rede social.
+
+Para essas informações sejam identificadas pelas redes sociais, é preciso declarar que o documento HTML contém metadados opengraph, adicionando ao container `<html>` o atributo ***"prefix"***, que deve conter um prefixos seguido do tipo do escopo ao qual a página HTML pertence.
+
+
+Sem Open Graph:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Cidade Jardim</title>
+        <meta name="description" content="O site mais legal do bairro">
+        <link rel="canonical" href="http://www.cidadejardim.com.br/">
+        <!-- outros metadados -->
+        <!-- outros metadados -->
+
+    </head>
+
+    <body>
+        <!-- mais código html -->
+    </body>
+</html>
+```
+
+Com Open Graph para Facebook:
+
+```html
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns/website#">
+    <head>
+
+        <!-- metadados nativos -->
+        <title>Cidade Jardim</title>
+        <meta name="description" content="O site mais legal do bairro">
+        <link rel="canonical" href="http://www.cidadejardim.com.br/">
+
+        <!-- metadados opengraph -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Cidade Jardim">
+        <meta property="og:description" content="O site mais legal do bairro">
+        <meta property="og:url" content="http://www.cidadejardim.com.br/">
+        <meta property="og:image" content="http://www.cidadejardim.com.br/logo.png">
+        
+        <!-- outros metadados -->
+        <!-- outros metadados -->
+
+    </head>
+
+    <body>
+        <!-- mais código html -->
+    </body>
+</html>
+```
+
+Com Open Graph para o Twitter
+
+```html
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns/website#">
+    <head>
+
+        <!-- metadados nativos -->
+        <title>Cidade Jardim</title>
+        <meta name="description" content="O site mais legal do bairro">
+        <link rel="canonical" href="http://www.cidadejardim.com.br/">
+
+        <!-- metadados somente do twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@cidadejardim">
+        <meta name="twitter:creator" content="@ricardopereira">
+        <!-- metatados compartilhados: facebook + twitter -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Cidade Jardim">
+        <meta property="og:description" content="O site mais legal do bairro">
+        <meta property="og:url" content="http://www.cidadejardim.com.br/">
+        <meta property="og:image" content="http://www.cidadejardim.com.br/logo.png">
+
+        <!-- outros metadados -->
+        <!-- outros metadados -->
+
+    </head>
+
+    <body>
+        <!-- mais código html -->
+    </body>
+</html>
+```
+
+Para conhecer todos os tipos de escopo disponíveis, acesse [http://ogp.me](http://ogp.me/).
+Para descobrir os metadados opengraph suportados pelo twitter acesse [https://developer.twitter.com](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html).
+
+Para testar as tags do opengraph você pode usar o [Debugger do Facebook](https://developers.facebook.com/tools/debug/) ou a [Ferramenta de Testes do Google](https://search.google.com/structured-data/testing-tool).
+
+
+
+# 5. A lista de metadados
+
+Abaixo está organizada uma lista de tags para serem utilizadas no container `<head>` dos documentos html.
+A lista é classificada por parâmetros, sempre exibindo os três tipos de metadados:
+
+# 5.1. Título
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<title>Homem Aranha Home Page</title>`                                      |
+| Microdata    | `<meta itemprop="name" content="Homem Aranha Home Page">`                    |
+| Opengraph    | `<meta property="og:title" content="Homem Aranha Home Page"`                 |
+
+# 5.2. Descrição
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<meta name="description" content="Site do Amigo da vizinhança">`            |
+| Microdata    | `<meta itemprop="description" content="Site do Amigo da vizinhança">`        |
+| Opengraph    | `<meta property="og:description" content="Site do Amigo da vizinhança">`     |
+
+
+
+
+
+
 
 
 
@@ -210,72 +450,7 @@ Dentro do container `<head>`, adicione:
 
 
 
-# 2. Microdatas
 
-Os atributos especiais chamados de ***"microdatas"*** são uma forma de classificar os valores já existentes em uma página html, atrelando-os a definições específicas para que os mecanismos de busca possam entender o conteúdo com mais exatidão.
-
-Para as microdatas serem identificadas pelos mecanismos de busca, é preciso declarar que o elemento escolhido servirá como um container de escopo, adicionando a ele o atributo ***"itemscope"***. Uma vez declarado o elemento como escopo de microdatas, é preciso definir o tipo do escopo, adicionando o atributo ***"itemtype"***. 
-
-Sem Microdata:
-
-```html
-<section>
-
-  <h1>Walter Elias Disney</h1>
-  
-  <p><img src="http://www.example.com/disney.jpg" alt="Walter Disney"></p>
-  
-  <p><a href="https://pt.wikipedia.org/wiki/Walt_Disney">Info</a></p>
-  
-</section>
-```
-
-Com Microdata:
-
-```html
-<section itemscope itemtype="http://schema.org/Person">
-
-  <h1 itemprop="name">Walter Elias Disney</h1>
-  
-  <p><img itemprop="image" src="http://www.example.com/disney.jpg" alt="Walter Disney"></p>
-  
-  <p><a itemprop="url" href="https://pt.wikipedia.org/wiki/Walt_Disney">Info</a></p>
-  
-</section>
-```
-
-Analizando o exemplo acima, perceba:
-
-
-| Tag   | Microdata | Origem              | Valor                                     |
-|:-----:|:---------:|:-------------------:|:------------------------------------------:
-| h1    | name      | conteúdo da tag h1  | Walter Elias Disney                       |
-| img   | image     | atributo src        | http://www.example.com/disney.jpg         |
-| a     | url       | atributi href       | https://pt.wikipedia.org/wiki/Walt_Disney |
-
-
-
-Dependendo da tag, o valor da microdata possui diferentes origens. abaixo, uma tabela de referência para saber onde estão os valores para os atributos *itemprop*:
-
-
-| Tag           |  Localização do valor            |  Exemplo                                       |
-|:-------------:|:--------------------------------:|:----------------------------------------------:|
-| `<meta>`      |  Atributo content                | `<meta itemprop="latitude" content="37.4149">` |
-| `<audio>`     |  Atributo src                    | `<audio itemprop="contentUrl" src="horse.ogg"></audio>`
-| `<embed>`     |  Atributo src                    |	`<embed  itemprop="contentUrl" src="helloworld.swf">`
-| `<iframe>`    |  Atributo src                    |	`<iframe itemprop="url" src="/default.php"></iframe>`
-| `<img>`       |  Atributo src                    |	`<img itemprop="image" src="/foto.jpg">`
-| `<source>`    |  Atributo src                    |	`<audio><source itemprop="contentUrl" src="horse.ogg" type="audio/ogg"></audio>`
-| `<video>`     |  Atributo src                    |	`<video itemprop="contentUrl" src="movie.ogg"></video>`
-| `<a>`         |  Atributo href                   |	`<a itemprop="url" href="http://google.com">`
-| `<area>`      |  Atributo href                   |	`<area itemprop="url" shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">`
-| `<link>`      |  Atributo href                   |	`<link itemprop="url" rel="stylesheet" type="text/css" href="theme.css">`
-| `<object>`    |  Atributo data                   |	`<object itemprop="contentUrl" width="400" height="400" data="helloworld.swf"></object>`
-| `<time>`      |  Atributo datetime               |	`<time itemprop="birthday" datetime="2017-02-20">Aniversário</time>`
-| Demais Tags   |  Conteúdo textual                |	`<h1 itemprop="name">Ricardo Pereira</h1>`
-
-
-Para testar as microdatas e descobrir os tipos de escopo disponíveis, acesse [https://schema.org](https://schema.org/docs/full.html). Para exemplos e explicações mais detalhadas acesse [https://diveintohtml5.com.br](https://diveintohtml5.com.br/extensibility.html#what-is-microdata). A especificação se encontra na [W3C](https://www.w3.org/TR/microdata/).
 
 # 3. OpenGraph
 
