@@ -347,16 +347,41 @@ Para testar as tags do opengraph você pode usar o [Debugger do Facebook](https:
 Abaixo está organizada uma lista de tags para serem utilizadas no container `<head>` dos documentos html.
 A lista é classificada por parâmetros, sempre exibindo os três tipos de metadados, quando possuírem uma notação disponível:
 
-## 4.1. Título
+## 4.1. Para página inicial
+
+### 4.1.1. Namespaces
 
 | Tipo         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
-| Nativa       | `<title>Homem Aranha Home Page</title>`                                      |
-| Microdata    | `<meta itemprop="name" content="Homem Aranha Home Page">`                    |
-| Opengraph    | `<meta property="og:title" content="Homem Aranha Home Page"`                 |
+| Nativa       | `<!DOCTYPE html>` - no topo do documento                                     |
+| Microdata    | `<head itemscope itemtype="http://schema.org/WebSite">`                      |
+| Opengraph    | `<html prefix="og:http://ogp.me/ns# website: http://ogp.me/ns/website#">`    |
 
+### 4.1.2. Declarações adicionais
 
-## 4.2. Descrição
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       |                                                                              |
+| Microdata    |                                                                              |
+| Opengraph    | `<meta property="og:type" content="website">`                                |
+
+### 4.1.3. Idioma
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<html lang="pt_BR">`                                                        |
+| Microdata    | `<meta itemprop="inLanguage" content="pt_BR">`                               |
+| Opengraph    | `<meta property="og:locale" content="pt_BR">`                                |
+
+### 4.1.4. Título do Site
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<title>Site do Homem Aranha</title>`                                        |
+| Microdata    | `<meta itemprop="name" content="Site do Homem Aranha">`                      |
+| Opengraph    | `<meta property="og:site_name" content="Site do Homem Aranha">`              |
+
+### 4.1.5. Descrição
 
 | Tipo         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
@@ -364,6 +389,154 @@ A lista é classificada por parâmetros, sempre exibindo os três tipos de metad
 | Microdata    | `<meta itemprop="description" content="Site do Amigo da vizinhança">`        |
 | Opengraph    | `<meta property="og:description" content="Site do Amigo da vizinhança">`     |
 
+### 4.1.6. URL do site
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<link rel="canonical" href="http://www.spidey.com">`                        |
+| Microdata    | `<meta itemprop="url" content="http://www.spidey.com/contato">`              |
+| Opengraph    | `<meta property="og:url" content="http://www.spidey.com/contato">`           |
+
+### 4.1.7. Imagem do site
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       |                                                                              |
+| Microdata    | `<meta itemprop="image" content="http://www.spidey.com/logo.png">`           |
+| Opengraph    | `<meta property="og:image" content="http://www.spidey.com/logo.png">`        |
+| Opengraph    | `<meta property="og:image:secure_url" content="https://www.spidey.com/logo.png">` |
+| Opengraph    | `<meta property="og:image:width" content="200">`                             |
+| Opengraph    | `<meta property="og:image:height" content="200">`                            |
+| Opengraph    | `<meta property="og:image:type" content="image/png">`                        |
+
+### 4.1.8. Autor do site
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<meta name="author" content="https://rpdesignerfly.github.io">`             |
+| Nativa       | `<link rel="author" href="https://rpdesignerfly.github.io">`                 |
+| Microdata    | `<meta itemprop="author" content="https://rpdesignerfly.github.io">`         |
+| Opengraph    |                                                                              |
+
+### 4.1.9. Data de publicação do site
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       |                                                                              |
+| Microdata    | `<meta itemprop="datePublished" content="1972-06-18T01:23:45Z">`             |
+| Opengraph    |                                                                              |
+
+
+## 4.2. Para página de artigo/postagem
+
+### 4.2.1. Namespaces
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<!DOCTYPE html>` - no topo do documento                                     |
+| Microdata    | `<head itemscope itemtype="http://schema.org/Article">`                      |
+| Opengraph    | `<html prefix="og:http://ogp.me/ns# article:http://ogp.me/ns/article#">`     |
+
+### 4.2.2. Declarações adicionais
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       |                                                                              |
+| Microdata    |                                                                              |
+| Opengraph    | `<meta property="og:type" content="article">`                                |
+| Opengraph    | `<meta name="twitter:card" content="summary">`                               |
+
+### 4.2.3. Idioma
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<html lang="pt_BR">`                                                        |
+| Microdata    | `<meta itemprop="inLanguage" content="pt_BR">`                               |
+| Opengraph    | `<meta property="og:locale" content="pt_BR">`                                |
+
+### 4.2.4. Título do Site
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       |                                                                              |
+| Microdata    |                                                                              |
+| Opengraph    | `<meta property="og:site_name" content="Site do Homem Aranha">`              |
+| Opengraph    | `<meta name="twitter:site" content="@spidey">`                               |
+
+### 4.2.5. Título do Artigo
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<title>Fluido de Teia | Site do Homem Aranha</title>`                       |
+| Microdata    | `<meta itemprop="name" content="Fluido de Teia | Site do Homem Aranha">`     |
+| Opengraph    | `<meta property="og:title" content="Fluido de Teia">`                        |
+
+### 4.2.6. Descrição
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<meta name="description" content="Site do Amigo da vizinhança">`            |
+| Microdata    | `<meta itemprop="description" content="Site do Amigo da vizinhança">`        |
+| Opengraph    | `<meta property="og:description" content="Site do Amigo da vizinhança">`     |
+
+### 4.2.5. URL do artigo
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<link rel="canonical" href="http://www.spidey.com/fluido-de-teia">`         |
+| Microdata    | `<meta itemprop="url" content="http://www.spidey.com/fluido-de-teia">`       |
+| Opengraph    | `<meta property="og:url" content="http://www.spidey.com/fluido-de-teia">`    |
+
+### 4.2.6. Imagem do artigo
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       |                                                                              |
+| Microdata    | `<meta itemprop="image" content="http://www.spidey.com/logo.png">`           |
+| Opengraph    | `<meta property="og:image" content="http://www.spidey.com/logo.png">`        |
+| Opengraph    | `<meta property="og:image:secure_url" content="https://www.spidey.com/logo.png">` |
+| Opengraph    | `<meta property="og:image:width" content="200">`                             |
+| Opengraph    | `<meta property="og:image:height" content="200">`                            |
+| Opengraph    | `<meta property="og:image:type" content="image/png">`                        |
+
+### 4.2.7. Autor do artigo
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<meta name="author" content="https://rpdesignerfly.github.io">`             |
+| Nativa       | `<link rel="author" href="https://rpdesignerfly.github.io">`                 |
+| Microdata    | `<meta itemprop="author" content="https://rpdesignerfly.github.io">`         |
+| Opengraph    | `<meta property="article:author" content="https://rpdesignerfly.github.io">` |
+| Opengraph    | `<meta name="twitter:creator" content="@rpdesignerfly">`                     |
+
+### 4.2.7. Publicador/Editora do artigo
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       | `<link rel="publisher" href="http://www.fb.com/comiccon">`                   |
+| Microdata    | `<meta itemprop="publisher" content="http://www.fb.com/comiccon">`           |
+| Opengraph    | `<meta property="article:publisher" content="http://www.fb.com/comiccon">`   |
+
+### 4.2.8. Data de publicação do artigo
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       |                                                                              |
+| Microdata    | `<meta itemprop="datePublished" content="1972-06-18T01:23:45Z">`             |
+| Opengraph    | `<meta property="article:published_time" content="1972-06-18T01:23:45Z">`    |
+
+
+### 4.2.9. Taxonomia
+
+| Tipo         | Notação                                                                      |
+|:------------:|:-----------------------------------------------------------------------------|
+| Nativa       |                                                                              |
+| Microdata    |                                                                              |
+| Opengraph    | `<meta property="article:section" content="Front page">`                     |
+| Opengraph    | `<meta property="article:tag" content="Watergate">`                          |
+
+
+## 4.3. Para página de perfil
 
 
 
@@ -375,266 +548,5 @@ A lista é classificada por parâmetros, sempre exibindo os três tipos de metad
 
 
 
-
-## 2.1. Dados para Homepage
-
-| Informação       | HTML                                                                         |
-|:----------------:|:-----------------------------------------------------------------------------|
-| Namespace        | `<!DOCTYPE html>`                                                            |
-| Título           | `<title>Home Aranha</title>`                                                 |
-| Descrição        | `<meta name="description" content="Site do Amigo da vizinhança">`            |
-| Url              | `<link rel="canonical" href="http://www.spidey.com">`                        |
-| Imagem           |                                                                              |
-| Autor            | `<meta name="author" content="https://rpdesignerfly.github.io">`             |
-| Autor            | `<link rel="author" href="https://rpdesignerfly.github.io">`                 |
-
-
-| Informação       | Microdata                                                                    |
-|:----------------:|:-----------------------------------------------------------------------------| 
-| Namespace        | `<head itemscope itemtype="http://schema.org/WebPage">`                      |
-| Título           | `<meta itemprop="name" content="Fale com Home Aranha">`                      |
-| Descrição        | `<meta itemprop="description" content="Amigo da vizinhança">`                |
-| Url              | `<meta itemprop="url" content="http://www.spidey.com/contato">`              |
-| Imagem           | `<meta itemprop="image" content="http://www.spidey.com/logo.png">`           |
-| Autor            | `<meta name="author" content="https://rpdesignerfly.github.io">`             |
-
-| Informação       | Opengraph                                                                    |
-|:----------------:|:-----------------------------------------------------------------------------|
-| Namespace        | `<html prefix="og: http://ogp.me/ns/website#">`                              |
-| Título           | `<meta property="og:title" content="Fale com Home Aranha">`                  |
-| Descrição        | `<meta property="og:description" content="Amigo da vizinhança">`             |
-| Url              | `<meta property="og:url" content="http://www.spidey.com/contato">`           |
-| Imagem           | `<meta property="og:image" content="http://www.spidey.com/logo.png">`        |
-| Autor            | `<meta property="article:author" content="https://rpdesignerfly.github.io">` |
-
-
-## 2.1. Dados para um Artigo
-
-| Informação       | HTML                                                                       |
-|:----------------:|:--------------------------------------------------------------------------:|
-| Título           | `<title>Fale com Home Aranha</title>`                                      |
-| Descrição        | `<meta name="description" content="Amigo da vizinhança">`                  |
-| Url do site      | `<link rel="base" href="http://www.spidey.com">`                           |
-| Url da Página    | `<link rel="canonical" href="http://www.spidey.com/contato">`              |
-| Imagem da página |                                                                            |
-| Url do Autor     | `<meta name="author" content="http://www.fb.com/stanlee">`                 |
-| Url do Autor     | `<link rel="author" href="http://www.fb.com/stanlee">`                     |
-| Url Editora/Pub  | `<link rel="publisher" href="http://www.fb.com/comiccon">`                 |
-
-
-| Informação       | Microdata                                                                  |
-|:----------------:|:--------------------------------------------------------------------------:|
-| Título           | `<meta itemprop="name" content="Fale com Home Aranha">`                    |
-| Descrição        | `<meta itemprop="description" content="Amigo da vizinhança">`              |
-| Url do site      | ``                                                                         |
-| Url da Página    | `<meta itemprop="url" content="http://www.spidey.com/contato">`            |
-| Imagem da página | `<meta itemprop="image" content="http://www.spidey.com/logo.png">`         |
-| Url do Autor     | `<meta name="author" content="http://www.fb.com/stanlee">`                 |
-| Url Editora/Pub  | `<meta name="publisher" content="http://www.fb.com/stanlee">`              |
-
-
-| Informação       | Opengraph                                                                  |
-|:----------------:|:--------------------------------------------------------------------------:|
-| Título           | `<meta property="og:title" content="Fale com Home Aranha">`                |
-| Descrição        | `<meta property="og:description" content="Amigo da vizinhança">`           |
-| Url do site      |                                                                            |
-| Url da Página    | `<meta property="og:url" content="http://www.spidey.com/contato">`         |
-| Imagem da página | `<meta property="og:image" content="http://www.spidey.com/logo.png">`      |
-| Url do Autor     | `<meta property="article:author" content="http://www.fb.com/stanlee">`     |
-| Url Editora/Pub  | `<meta property="article:publisher" content="http://www.fb.com/stanlee">`  |
-
-
-
-
-## 2.1. Dados básicos em HTML
-
-No container `<head>` do documneto HTML, adicione:
-
-```html
-<title>Cidade Jardim</title>
-<meta name="description" content="O site mais legal do bairro">
-<link rel="canonical" href="http://www.cidadejardim.com.br/">
-
-```
-
-## 2.2. Dados básicos Microdatas
-
-Na tag `<head>`, ative os atributos para microdatas do tipo *"http://schema.org/WebPage"*:
-
-Sem microdata:
-
-```html
-<head>
-```
-
-Com microdata:
-
-```html
-<head itemscope itemtype="http://schema.org/WebPage">
-```
-
-Dentro do container `<head itemscope itemtype="http://schema.org/WebPage">`, adicione:
-
-```html
-<meta itemprop="name" content="Cidade Jardim">
-<meta itemprop="description" content="O site mais legal do bairro">
-<meta itemprop="url" content="http://www.cidadejardim.com.br/">
-<meta itemprop="image" content="http://www.cidadejardim.com.br/logo.png">
-```
-
-## 2.3. Títulos e Descrições em Opengraph
-
-Na tag `<html>`, ative os atributos opengraph do tipo *"http://ogp.me/ns/website"*:
-
-
-Sem opengraph:
-
-```html
-<html>
-```
-
-Com opengraph:
-
-```html
-<html prefix="og: http://ogp.me/ns/website#">
-```
-
-Dentro do container `<head>`, adicione:
-
-```html
-<meta property="og:type" content="website">
-
-<meta property="og:title" content="Cidade Jardim">
-<meta property="og:description" content="O site mais legal do bairro">
-<meta property="og:url" content="http://www.cidadejardim.com.br/">
-<meta property="og:image" content="http://www.cidadejardim.com.br/logo.png">
-```
-
-## 2.4. Títulos e Descrições em Twitter Card
-
-Na tag `<html>`, ative os atributos opengraph de qualquer tipo.
-Neste exemplo, vamos usar o tipo básico o *"og: http://ogp.me/ns"*:
-
-Sem opengraph:
-
-```html
-<html>
-```
-
-Com opengraph:
-
-```html
-<html prefix="og: http://ogp.me/ns#">
-```
-
-Dentro do container `<head>`, adicione:
-
-
-```html
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@nytimesbits">
-<meta name="twitter:creator" content="@nickbilton">
-
-<meta property="og:title" content="Cidade Jardim">
-<meta property="og:description" content="O site mais legal do bairro">
-<meta property="og:url" content="http://www.cidadejardim.com.br/">
-<meta property="og:image" content="http://www.cidadejardim.com.br/logo.png">
-```
-
-
-
-
-# 3. Informações de Autoria
-
-
-```html
-<meta name="author" content="www.fb.com/santabrancaonline">
-```
-
-
-
-
-
-# 3. OpenGraph
-
-| Tipo de Página    | Namespace Opengraph                             |
-|:-----------------:|:-----------------------------------------------:|
-| Homepage          | `<html prefix="og: http://ogp.me/ns/website#">` |
-| Página de Música  | `<html prefix="og: http://ogp.me/ns/music#">`   |
-| Página de Vídeo   | `<html prefix="og: http://ogp.me/ns/video#">`   |
-| Artigo/Postagem   | `<html prefix="og: http://ogp.me/ns/article#">` |
-| Livro             | `<html prefix="og: http://ogp.me/ns/book#">`    |
-| Perfil            | `<html prefix="og: http://ogp.me/ns/profile#">` |
-| Perfil            | `<html prefix="og: http://ogp.me/ns/profile#">` |
-
-
-
-
-
-
-
-
-# 1. Cabeçalhos SEO
-
-Atualmente o google aceita como máximo de caracteres para títulos e descrições:
-     * Title Tags = 55 characters
-     * Meta Description = 115 characters
-     * @see http://www.sagerock.com/blog/title-tag-meta-description-length/
-     * @see https://moz.com/blog/new-title-tag-guidelines-preview-tool
-     * @see http://www.swellpath.com/2014/05/update-new-title-tag-meta-description-character-lengths/
-     * 
-     * O Google ignora as Meta Keywords para a indexação de páginas
-     * @see http://googlewebmastercentral.blogspot.in/2009/09/google-does-not-use-keywords-meta-tag.html
-     * 
-
-Abaixo segue uma referência de informações para utilizar nos cabeçalhos de documentos HTML:
-
-```html
-<meta name="description" content="Os melhores e mais completos cursos de Blender 3D e Ilustração do mercado. Cursos online 100% em vídeo aulas, com suporte especializado!">
-<meta name="robots" content="index, follow">
-<meta name="author" content="www.fb.com/santabrancaonline">
-
-
-<meta itemprop="name" content="CGNow Treinamentos - Cursos de Computação Gráfica, Blender e Ilustração">
-<meta itemprop="description" content="Os melhores e mais completos cursos de Blender 3D e Ilustração do mercado. Cursos online 100% em vídeo aulas, com suporte especializado!">
-<meta itemprop="image" content="http://www.cgnow.com.br/assets/images/site.png"/>
-<meta itemprop="url" content="http://www.cgnow.com.br/"/>
-
-
-<meta property="og:type" content="article">
-<meta property="og:title" content="CGNow Treinamentos - Cursos de Computação Gráfica, Blender e Ilustração">
-<meta property="og:site_name" content="CGNow Treinamentos">
-<meta property="og:url" content="http://www.cgnow.com.br/">
-<meta property="og:description" content="Os melhores e mais completos cursos de Blender 3D e Ilustração do mercado. Cursos online 100% em vídeo aulas, com suporte especializado!">
-<meta property="og:locale" content="pt_BR" />
-<meta property="og:image" content="http://www.cgnow.com.br/assets/images/site.png"/>
-<meta property="article:author" content=""/>
-<meta property="article:publisher" content=""/>
-
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="@cgnowbr"/>
-<meta name="twitter:title" content="CGNow Treinamentos - Cursos de Computação Gráfica, Blender e Ilustração"/>
-<meta name="twitter:description" content="Os melhores e mais completos cursos de Blender 3D e Ilustração do mercado. Cursos online 100% em vídeo aulas, com suporte especializado!"/>
-<meta name="twitter:image" content="http://www.cgnow.com.br/assets/images/site.png"/>
-
-
-<link rel="base" href="http://www.cgnow.com.br"/>
-<link rel="author" href="https://plus.google.com/+RicardoPereiraDias">
-<link rel="publisher" href="https://plus.google.com/+CgnowBr">
-<link rel="canonical" href="http://www.cgnow.com.br/">
-
-<link rel="shortcut icon" href="http://www.cgnow.com.br/assets/images/favicon.png">
-<link rel="icon" href="http://www.cgnow.com.br/assets/images/icon32.png" type="image/png" sizes="32x32">
-<link rel="icon" href="http://www.cgnow.com.br/assets/images/icon76.png" type="image/png" sizes="76x76">
-<link rel="icon" href="http://www.cgnow.com.br/assets/images/icon144.png" type="image/png" sizes="144x144">
-<link rel="apple-touch-icon" href="http://www.cgnow.com.br/assets/images/icon144.png" type="image/png" sizes="144x144">
-<link rel="apple-touch-icon" href="http://www.cgnow.com.br/assets/images/icon76.png" type="image/png" sizes="76x76">
-<link rel="apple-touch-icon" href="http://www.cgnow.com.br/assets/images/icon144.png" type="image/png">
-```
-
-http://ogp.me/
-https://schema.org/docs/full.html
-https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html
-https://diveintohtml5.com.br/extensibility.html#what-is-microdata
 
 [Anterior](html-05-semantica-estrutural.md) ... [Próxima](html-08-implementando-postagens.md)
