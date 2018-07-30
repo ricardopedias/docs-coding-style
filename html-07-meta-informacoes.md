@@ -342,64 +342,63 @@ Para descobrir os metadados opengraph suportados pelo twitter acesse [https://de
 Para testar as tags do opengraph você pode usar o [Debugger do Facebook](https://developers.facebook.com/tools/debug/) ou a [Ferramenta de Testes do Google](https://search.google.com/structured-data/testing-tool).
 
 
-# 4. Referência de meta informações
+# 4. Tag head : Referência de meta informações
 
 Abaixo está organizada uma lista de tags para serem utilizadas no container `<head>` dos documentos html.
 A lista é classificada por parâmetros, sempre exibindo os três tipos de metadados, quando possuírem uma notação disponível:
 
 ## 4.1. Para página inicial
 
-### 4.1.1. Namespaces
 
-| Tipo         | Notação                                                                      |
+| Namespaces         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<!DOCTYPE html>` - no topo do documento                                     |
 | Microdata    | `<head itemscope itemtype="http://schema.org/WebSite">`                      |
 | Opengraph    | `<html prefix="og:http://ogp.me/ns# website: http://ogp.me/ns/website#">`    |
 
-### 4.1.2. Declarações adicionais
+<br>
 
-| Tipo         | Notação                                                                      |
+| Declarações         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       |                                                                              |
 | Microdata    |                                                                              |
 | Opengraph    | `<meta property="og:type" content="website">`                                |
 
-### 4.1.3. Idioma
+<br>
 
-| Tipo         | Notação                                                                      |
+| Idioma         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<html lang="pt_BR">`                                                        |
 | Microdata    | `<meta itemprop="inLanguage" content="pt_BR">`                               |
 | Opengraph    | `<meta property="og:locale" content="pt_BR">`                                |
 
-### 4.1.4. Título do Site
+<br>
 
-| Tipo         | Notação                                                                      |
+| Título do Site         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<title>Site do Homem Aranha</title>`                                        |
 | Microdata    | `<meta itemprop="name" content="Site do Homem Aranha">`                      |
 | Opengraph    | `<meta property="og:site_name" content="Site do Homem Aranha">`              |
 
-### 4.1.5. Descrição
+<br>
 
-| Tipo         | Notação                                                                      |
+| Descrição    | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<meta name="description" content="Site do Amigo da vizinhança">`            |
 | Microdata    | `<meta itemprop="description" content="Site do Amigo da vizinhança">`        |
 | Opengraph    | `<meta property="og:description" content="Site do Amigo da vizinhança">`     |
 
-### 4.1.6. URL do site
+<br>
 
-| Tipo         | Notação                                                                      |
+| URL do site         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<link rel="canonical" href="http://www.spidey.com">`                        |
 | Microdata    | `<meta itemprop="url" content="http://www.spidey.com/contato">`              |
 | Opengraph    | `<meta property="og:url" content="http://www.spidey.com/contato">`           |
 
-### 4.1.7. Imagem do site
+<br>
 
-| Tipo         | Notação                                                                      |
+| Imagem do site         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       |                                                                              |
 | Microdata    | `<meta itemprop="image" content="http://www.spidey.com/logo.png">`           |
@@ -409,18 +408,18 @@ A lista é classificada por parâmetros, sempre exibindo os três tipos de metad
 | Opengraph    | `<meta property="og:image:height" content="200">`                            |
 | Opengraph    | `<meta property="og:image:type" content="image/png">`                        |
 
-### 4.1.8. Autor do site
+<br>
 
-| Tipo         | Notação                                                                      |
+| Autor do site         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<meta name="author" content="https://rpdesignerfly.github.io">`             |
 | Nativa       | `<link rel="author" href="https://rpdesignerfly.github.io">`                 |
 | Microdata    | `<meta itemprop="author" content="https://rpdesignerfly.github.io">`         |
 | Opengraph    |                                                                              |
 
-### 4.1.9. Data de publicação do site
+<br>
 
-| Tipo         | Notação                                                                      |
+| Data de publicação do site         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       |                                                                              |
 | Microdata    | `<meta itemprop="datePublished" content="1972-06-18T01:23:45Z">`             |
@@ -429,67 +428,65 @@ A lista é classificada por parâmetros, sempre exibindo os três tipos de metad
 
 ## 4.2. Para página de artigo/postagem
 
-### 4.2.1. Namespaces
-
-| Tipo         | Notação                                                                      |
+| Namespaces        | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<!DOCTYPE html>` - no topo do documento                                     |
 | Microdata    | `<head itemscope itemtype="http://schema.org/Article">`                      |
 | Opengraph    | `<html prefix="og:http://ogp.me/ns# article:http://ogp.me/ns/article#">`     |
 
-### 4.2.2. Declarações adicionais
+<br>
 
-| Tipo         | Notação                                                                      |
+| Declarações         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       |                                                                              |
 | Microdata    |                                                                              |
 | Opengraph    | `<meta property="og:type" content="article">`                                |
 | Opengraph    | `<meta name="twitter:card" content="summary">`                               |
 
-### 4.2.3. Idioma
+<br>
 
-| Tipo         | Notação                                                                      |
+| Idioma        | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<html lang="pt_BR">`                                                        |
 | Microdata    | `<meta itemprop="inLanguage" content="pt_BR">`                               |
 | Opengraph    | `<meta property="og:locale" content="pt_BR">`                                |
 
-### 4.2.4. Título do Site
+<br>
 
-| Tipo         | Notação                                                                      |
+| Título do Site         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       |                                                                              |
 | Microdata    |                                                                              |
 | Opengraph    | `<meta property="og:site_name" content="Site do Homem Aranha">`              |
 | Opengraph    | `<meta name="twitter:site" content="@spidey">`                               |
 
-### 4.2.5. Título do Artigo
+<br>
 
-| Tipo         | Notação                                                                      |
+| Título do Artigo    | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
-| Nativa       | `<title>Fluido de Teia | Site do Homem Aranha</title>`                       |
-| Microdata    | `<meta itemprop="name" content="Fluido de Teia | Site do Homem Aranha">`     |
+| Nativa       | `<title>Fluido de Teia - Site do Homem Aranha</title>`                       |
+| Microdata    | `<meta itemprop="name" content="Fluido de Teia - Site do Homem Aranha">`     |
 | Opengraph    | `<meta property="og:title" content="Fluido de Teia">`                        |
 
-### 4.2.6. Descrição
+<br>
 
-| Tipo         | Notação                                                                      |
+| Descrição    | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<meta name="description" content="Site do Amigo da vizinhança">`            |
 | Microdata    | `<meta itemprop="description" content="Site do Amigo da vizinhança">`        |
 | Opengraph    | `<meta property="og:description" content="Site do Amigo da vizinhança">`     |
 
-### 4.2.5. URL do artigo
+<br>
 
-| Tipo         | Notação                                                                      |
+| URL do artigo    | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<link rel="canonical" href="http://www.spidey.com/fluido-de-teia">`         |
 | Microdata    | `<meta itemprop="url" content="http://www.spidey.com/fluido-de-teia">`       |
 | Opengraph    | `<meta property="og:url" content="http://www.spidey.com/fluido-de-teia">`    |
 
-### 4.2.6. Imagem do artigo
+<br>
 
-| Tipo         | Notação                                                                      |
+| Imagem do artigo    | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       |                                                                              |
 | Microdata    | `<meta itemprop="image" content="http://www.spidey.com/logo.png">`           |
@@ -499,9 +496,9 @@ A lista é classificada por parâmetros, sempre exibindo os três tipos de metad
 | Opengraph    | `<meta property="og:image:height" content="200">`                            |
 | Opengraph    | `<meta property="og:image:type" content="image/png">`                        |
 
-### 4.2.7. Autor do artigo
+<br>
 
-| Tipo         | Notação                                                                      |
+| Autor do artigo    | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<meta name="author" content="https://rpdesignerfly.github.io">`             |
 | Nativa       | `<link rel="author" href="https://rpdesignerfly.github.io">`                 |
@@ -509,31 +506,30 @@ A lista é classificada por parâmetros, sempre exibindo os três tipos de metad
 | Opengraph    | `<meta property="article:author" content="https://rpdesignerfly.github.io">` |
 | Opengraph    | `<meta name="twitter:creator" content="@rpdesignerfly">`                     |
 
-### 4.2.7. Publicador/Editora do artigo
+<br>
 
-| Tipo         | Notação                                                                      |
+| Publicador/Editora do artigo    | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       | `<link rel="publisher" href="http://www.fb.com/comiccon">`                   |
 | Microdata    | `<meta itemprop="publisher" content="http://www.fb.com/comiccon">`           |
 | Opengraph    | `<meta property="article:publisher" content="http://www.fb.com/comiccon">`   |
 
-### 4.2.8. Data de publicação do artigo
+<br>
 
-| Tipo         | Notação                                                                      |
+| Data de publicação do artigo    | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       |                                                                              |
 | Microdata    | `<meta itemprop="datePublished" content="1972-06-18T01:23:45Z">`             |
 | Opengraph    | `<meta property="article:published_time" content="1972-06-18T01:23:45Z">`    |
 
+<br>
 
-### 4.2.9. Taxonomia
-
-| Tipo         | Notação                                                                      |
+| Taxonomia         | Notação                                                                      |
 |:------------:|:-----------------------------------------------------------------------------|
 | Nativa       |                                                                              |
-| Microdata    |                                                                              |
-| Opengraph    | `<meta property="article:section" content="Front page">`                     |
-| Opengraph    | `<meta property="article:tag" content="Watergate">`                          |
+| Microdata    | `<meta itemprop="keywords" content="superheroi, comics">`                    |
+| Opengraph    | `<meta property="article:section" content="front page">`                     |
+| Opengraph    | `<meta property="article:tag" content="superheroi, comics">`                 |
 
 
 ## 4.3. Para página de perfil
