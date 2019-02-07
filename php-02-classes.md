@@ -50,7 +50,7 @@ use DcComics\JusticeLeague\WonderWoman;
 
 # 3. Declaração de Classes
 
-* **DEVE-SE** declara classes e namespaces sempre em **StudlyCaps**;
+* **DEVE-SE** declarar classes e namespaces sempre em **UpperCamelCase**. 
 
 > Ou seja, **MinhaClasseFantastica**. Nunca *minhaClasseFantastica* ou *Minha_Classe_Fantastica*, ou outros formatos ainda mais bizarros.
 
@@ -116,7 +116,7 @@ class IronMan
 
 # 6. Propriedades
 
-* **DEVE-SE** declarar os nomes de propriedades em **snake_case**;
+* **DEVE-SE** declarar os nomes de propriedades em **lowerCamelCase**;
 * **DEVE-SE** declarar as visibilidades para todas as propriedades;
 * **NÃO DEVE-SE** utilizar a palavra-chave **var** pra declarar uma propriedade;
 * **NÃO DEVE-SE** declarar mais que uma uma propriedade por linha;
@@ -128,14 +128,14 @@ namespace App\Marvel;
 
 class IronMan
 {
-    public $mark_armor = 42;
+    public $markArmor = 42;
 }
 
 ```
 
 # 7. Métodos
 
-* **DEVE-SE** declarar os nomes de métodos em **camelCase**;
+* **DEVE-SE** declarar os nomes de métodos em **lowerCamelCase**;
 * **DEVE-SE** declarar as visibilidades em todos os métodos;
 * **NÃO DEVE-SE** prefixar os nomes de métodos com **_** para indicar visibilidades *protected* ou *private*;
 * **NÃO DEVE-SE** declara as assinaturas de métodos com um espaço após o nome do método;
@@ -258,9 +258,9 @@ Listas de argumentos PODEM ser divididas em múltiplas linhas, onde cada linha s
 <?php
 
 $foo->bar(
-    $long_argument,
-    $longer_argument,
-    $much_longer_argument
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
 );
 
 ```
