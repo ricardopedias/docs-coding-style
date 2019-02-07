@@ -3,11 +3,25 @@
 * [Principal](readme.md)
 * [Índice PHP](php.md)
 
-# 1. Declaração de variáveis e funções
+# 1. Declaração de variáveis
 
-Tanto as variáveis como as funções:
+As variáveis:
 
-* **DEVEM** ser declaradas em snake_case para não se confundirem com métodos;
+* **DEVEM** ser declaradas em **lowerCamelCase**;
+
+```php
+<?php
+
+$argOne = "Programar ";
+$argTwo = "é bom ";
+$argThree = "demais!";
+```
+
+# 2. Declaração de funções
+
+As funções:
+
+* **DEVEM** ser declaradas em **snake_case** para não se confundirem com métodos;
 * **NÃO DEVE-SE** adicionar um espaço antes de cada vírgula na lista de argumentos;
 * **DEVE-SE** adicionar um espaço após cada vírgula na lista de argumentos;
 * **DEVE-SE** colocar os argumentos com valores default ao fim da lista de argumentos.
@@ -21,7 +35,7 @@ public function arch_reactor($arg_one, &$arg_two, $arg_three = [])
 }
 ```
 
-Lista de argumentos **PODEM** ser divididas entre múltiplas linhas, onde cada linha subsequente é indentada uma vez. Ao fazer isso:
+Lista de argumentos **PODEM** ser divididas em múltiplas linhas, onde cada linha subsequente é indentada uma vez. Ao fazer isso:
 
 * **DEVE-SE** colocar o primeiro item da lista na linha seguinte;
 * **DEVE-SE** colocar somente um argumento por linha;
@@ -75,13 +89,13 @@ Na declaração de **closure**, note o posicionamento dos parenteses, vírgulas,
 ```php
 <?php
 
-$closure_with_args = function ($arg1, $arg2) {
+$closureWithArgs = function ($arg1, $arg2) {
 
     // corpo da closure
     
 };
 
-$closure_with_args_and_vars = function ($arg1, $arg2) use ($var1, $var2) {
+$closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
 
     // corpo da closure
     
@@ -100,10 +114,10 @@ Exemplos de argumentos sem a palavra-chave *"use"*:
 ```php
 <?php
 
-$long_args_no_vars = function (
-    $long_argument,
-    $longer_argument,
-    $much_longer_argument
+$longArgsNoVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
 ) {
 
    // corpo da closure
@@ -116,10 +130,10 @@ Exemplos de variáveis na palavra-chave *"use"* sem argumentos na função:
 ```php
 <?php
 
-$no_args_long_vars = function () use (
-    $long_var1,
-    $longer_var2,
-    $much_longer_var3
+$noArgsLongCars = function () use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
 ) {
 
    // corpo da closure
@@ -132,34 +146,34 @@ Exemplos de argumentos na função e variáveis na palavra-chave *"use"*:
 ```php
 <?php
 
-$long_args_long_vars = function (
-    $long_argument,
-    $longer_argument,
-    $much_longer_argument
+$longArgsLongVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
 ) use (
-    $long_var1,
-    $longer_var2,
-    $much_longer_var3
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
 ) {
 
    // corpo da closure
    
 };
 
-$long_args_short_vars = function (
-    $long_argument,
-    $longer_argument,
-    $much_longer_argument
+$longArgsShortVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
 ) use ($var1) {
 
    // corpo da closure
    
 };
 
-$short_args_lon_vars = function ($arg) use (
-    $long_var1,
-    $longer_var2,
-    $much_longer_var3
+$shortArgsLongVars = function ($arg) use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
 ) {
 
    // corpo da closure
