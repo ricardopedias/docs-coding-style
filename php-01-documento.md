@@ -85,7 +85,7 @@ Errado:
 </h1>
 
 <?php
-    $arch_reactor = [
+    $archReactor = [
         'one',
         'two',
         'three',
@@ -100,7 +100,7 @@ Errado:
 
 <ul>
 <?php
-    foreach($arch_reactor as $name) {
+    foreach($archReactor as $name) {
         echo "<li>";
         echo $name;
         echo "</li>";
@@ -124,7 +124,7 @@ Certo:
 
     $title = 'Título da Página';
     
-    $arch_reactor = [
+    $archReactor = [
         'one',
         'two',
         'three',
@@ -148,7 +148,7 @@ Certo:
 <h2>Subtítulo</h2>
 
 <ul>
-    <?php foreach($arch_reactor as $name): ?> <!-- notação de template -->
+    <?php foreach($archReactor as $name): ?> <!-- notação de template -->
     
         <li>
             <?= $name ?> <!-- notação de template -->
@@ -185,14 +185,14 @@ Um arquivo com declarações se parece assim:
 // declaração da constante SINGING_PHP
 define('SINGING_PHP', 'lálálá');
 
-// declaração da função 'marvinGaye'
-function marvinGaye() 
+// declaração da função 'marvin_gaye'
+function marvin_gaye() 
 {
     return 'Ohhh baby!';
 }
 
-// declaração da função 'michaelJackson'
-function michaelJackson()
+// declaração da função 'michael_jackson'
+function michael_jackson()
 {
     return 'Uhhh'!
 }
@@ -221,11 +221,11 @@ ini_set('error_reporting', E_ALL);
 // inclui o arquivo com declarações
 include "library.php";
 
-// invoca marvinGaye
-$one =  marvinGaye();
+// invoca marvin_gaye
+$one =  marvin_gaye();
 
-// invoca michaelJackson
-$two = michaelJackson();
+// invoca michael_jackson
+$two = michael_jackson();
 
 // exibe ao usuário a frase 'Ohhh baby! Uhhh Tchick ti ká!!'
 echo "$one $two" . yellow();
