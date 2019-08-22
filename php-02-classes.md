@@ -3,7 +3,7 @@
 * [Principal](readme.md)
 * [Índice PHP](php.md)
 
-Quando é dito "classes", refere-se a toda a estrutura que compoem a arquitetura do PHP, ou seja, classes, interfaces, traits, etc.
+Quando é dito "classes", refere-se a toda a estrutura que compoe a arquitetura do PHP, ou seja, classes, interfaces, traits, etc.
 
 # 1. Estrutura de Arquivos
 
